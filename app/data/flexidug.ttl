@@ -1,0 +1,1681 @@
+@prefix fldg: <http://osm.hpi.de/ontology/flexidug#> .
+@prefix ns1: <http://osm.hpi.de/ontology/fta#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sm: <https://w3id.org/ibp/StateMachineOntology#> .
+@prefix sys: <http://osm.hpi.de/ontology/system#> .
+@prefix tel: <http://osm.hpi.de/ontology/telegram#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://frittenburger.de/2022/11/EULYNX#Actor-traindriver> a sys:Actor ;
+    rdfs:label "Zugführer (TF)"^^xsd:string ;
+    sys:usesComponent <https://frittenburger.de/2022/11/EULYNX#Component-TF-Funkgerät>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-TF-Tablet> .
+
+<https://frittenburger.de/2022/11/EULYNX#AutomaticTrainsModel-lausitz-Automatic-Train-Model> a fldg:AutomaticTrainsModel ;
+    rdfs:label "lausitz Automatic Train Model"^^xsd:string ;
+    fldg:autoplay false ;
+    fldg:filename "datamodel/automatic-trains-lausitz.json"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#InfrastructureModel-lausitz-Infrastruktur-Model> a fldg:InfrastructureModel ;
+    rdfs:label "lausitz Infrastruktur Model"^^xsd:string ;
+    fldg:hasInfrastructure <https://frittenburger.de/2022/11/EULYNX#Point-Point-02cf7ef1-e950-4217-918c-58f6a157581a>,
+        <https://frittenburger.de/2022/11/EULYNX#Point-Point-0c60cd17-9815-4c03-90eb-ecbe71e01c9c>,
+        <https://frittenburger.de/2022/11/EULYNX#Point-Point-31f2be84-65ee-4193-9e42-b24f9b3ce5b5>,
+        <https://frittenburger.de/2022/11/EULYNX#Point-Point-46635504-f6c6-4d24-928e-712118023d7e>,
+        <https://frittenburger.de/2022/11/EULYNX#Point-Point-caba7108-af52-4f4f-aeae-8d52a378a853>,
+        <https://frittenburger.de/2022/11/EULYNX#Point-Point-d25723aa-aa04-4376-a837-c8c091ae8ebf>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E1>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E2>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E3>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E4>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A1>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A1b>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A2>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A2b>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B1>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B1b>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B2>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B2b>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60WE1>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60WE2> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-Digitales-Belegblatt-Component-Stellprozess-FreeRoute> a sys:Message ;
+    rdfs:label "Fahrweg freigeben"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Stellprozess>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt> ;
+    sys:messageName "FreeRoute"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-FreeRoute> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-Digitales-Belegblatt-Component-Stellprozess-SetRoute> a sys:Message ;
+    rdfs:label "Fahrweg prüfen und einstellen"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Stellprozess>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt> ;
+    sys:messageName "SetRoute"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-SetRoute> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-Digitales-Belegblatt-Component-TextToSpeech-Command> a sys:Message ;
+    rdfs:label "Text-Nachricht von ZL"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-TextToSpeech>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt> ;
+    sys:messageName "Command"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-Command> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-NaturalLanguageUnderstanding-Component-Digitales-Belegblatt-Ankunftsmeldung> a sys:Message ;
+    rdfs:label "Ankunftsmeldung"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-NaturalLanguageUnderstanding> ;
+    sys:messageName "Ankunftsmeldung"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-Ankunftsmeldung> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-NaturalLanguageUnderstanding-Component-Digitales-Belegblatt-Anmeldung> a sys:Message ;
+    rdfs:label "Anmeldung"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-NaturalLanguageUnderstanding> ;
+    sys:messageName "Anmeldung"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-Anmeldung> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-NaturalLanguageUnderstanding-Component-Digitales-Belegblatt-Fahranfrage> a sys:Message ;
+    rdfs:label "Fahranfrage"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-NaturalLanguageUnderstanding> ;
+    sys:messageName "Fahranfrage"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-Fahranfrage> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-NaturalLanguageUnderstanding-Component-Digitales-Belegblatt-FahrbefehlWiederholung> a sys:Message ;
+    rdfs:label "Fahrbefehlwiederholung"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-NaturalLanguageUnderstanding> ;
+    sys:messageName "FahrbefehlWiederholung"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-FahrbefehlWiederholung> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-NaturalLanguageUnderstanding-Component-Digitales-Belegblatt-NegativeBestaetigung> a sys:Message ;
+    rdfs:label "Negative Bestätigung"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-NaturalLanguageUnderstanding> ;
+    sys:messageName "NegativeBestaetigung"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-NegativeBestaetigung> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-NaturalLanguageUnderstanding-Component-Digitales-Belegblatt-PositiveBestaetigung> a sys:Message ;
+    rdfs:label "Positive Bestätigung"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-NaturalLanguageUnderstanding> ;
+    sys:messageName "PositiveBestaetigung"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-PositiveBestaetigung> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-NaturalLanguageUnderstanding-Component-Nothalt-EmergencyStopRequest> a sys:Message ;
+    rdfs:label "Nothaltauftrag von ZF"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Nothalt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-NaturalLanguageUnderstanding> ;
+    sys:messageName "EmergencyStopRequest"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-EmergencyStopRequest> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-NaturalLanguageUnderstanding-Component-TextToSpeech-NLUFehler> a sys:Message ;
+    rdfs:label "Fehlermeldung von NLU"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-TextToSpeech>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-NaturalLanguageUnderstanding> ;
+    sys:messageName "NLUFehler"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-Command> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-Nothalt-Component-Digitales-Belegblatt-EmergencyStopControl> a sys:Message ;
+    rdfs:label "Nothaltauftrag an Belegblatt zum Blockieren/Aktivieren der Steuerung"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-Nothalt> ;
+    sys:messageName "EmergencyStopControl"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-EmergencyStopControl> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-Nothalt-Component-TextToSpeech-EmergencyStop> a sys:Message ;
+    rdfs:label "Nothaltauftrag über Funk"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-TextToSpeech>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-Nothalt> ;
+    sys:messageName "EmergencyStop"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-EmergencyStop> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-RadioIO-Component-SIP-Server-wav_tf> a sys:Message ;
+    rdfs:label "WAV-File vom TF"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-SIP-Server> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-RadioIO> ;
+    sys:messageName "wav_tf"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-RadioIO-Component-ZLIC-Funkgerät-sound_zlic> a sys:Message ;
+    rdfs:label "Akustische Nachricht vom ZL"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-ZLIC-Funkgerät> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-RadioIO> ;
+    sys:messageName "sound_zlic"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-SIP-Server-Component-RadioIO-wav_zl> a sys:Message ;
+    rdfs:label "WAV-File vom ZL"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-RadioIO> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-SIP-Server> ;
+    sys:messageName "wav_zl"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-SIP-Server-Component-SpeechToText-TFAudio> a sys:Message ;
+    rdfs:label "WAV-File für Konvertierung in Text"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-SpeechToText>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-SIP-Server> ;
+    sys:messageName "TFAudio"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-Audio> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-SpeechToText-Component-NaturalLanguageUnderstanding-Transcribed> a sys:Message ;
+    rdfs:label "Text-Nachricht vom TF"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-NaturalLanguageUnderstanding>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-SpeechToText> ;
+    sys:messageName "Transcribed"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-Transcribed> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-Stellprozess-Component-Digitales-Belegblatt-FreeRouteResponse> a sys:Message ;
+    rdfs:label "Rückmeldung auf Fahrweg freigeben"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-Stellprozess> ;
+    sys:messageName "FreeRouteResponse"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-FreeRouteResponse> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-Stellprozess-Component-Digitales-Belegblatt-SetRouteResponse> a sys:Message ;
+    rdfs:label "Rückmeldung auf Fahrweg einstellen"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-Stellprozess> ;
+    sys:messageName "SetRouteResponse"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-SetRouteResponse> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-Stellprozess-Component-Digitales-Belegblatt-fahrweg_state> a sys:Message ;
+    rdfs:label "Fahrweg eingelaufen"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-Stellprozess> ;
+    sys:messageName "fahrweg_state"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-Stellprozess-Component-ObjectController-fahrweg_set> a sys:Message ;
+    rdfs:label "Fahrweg einstellen"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-ObjectController> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-Stellprozess> ;
+    sys:messageName "fahrweg_set"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-TF-Funkgerät-Component-ZLIC-Funkgerät-radio_tf> a sys:Message ;
+    rdfs:label "Funkspruch vom TF"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-ZLIC-Funkgerät> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-TF-Funkgerät> ;
+    sys:messageName "radio_tf"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-TextToSpeech-Component-SIP-Server-ZLiCAudio> a sys:Message ;
+    rdfs:label "WAV-File aus Konvertierung von Text"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-SIP-Server>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-TextToSpeech> ;
+    sys:messageName "ZLiCAudio"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-Audio> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-TextToSpeech-Component-SIP-Server-ZLiCEmergencyStopAudio> a sys:Message ;
+    rdfs:label "Nothalt WAV-File aus Konvertierung von Text"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-SIP-Server>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-TextToSpeech> ;
+    sys:messageName "ZLiCEmergencyStopAudio"^^xsd:string ;
+    tel:hasStructure <https://frittenburger.de/2022/11/EULYNX#Structure-EmergencyAudio> .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-ZLIC-Funkgerät-Component-RadioIO-sound_tf> a sys:Message ;
+    rdfs:label "Akustische Nachricht vom TF"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-RadioIO> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-ZLIC-Funkgerät> ;
+    sys:messageName "sound_tf"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Message-Component-ZLIC-Funkgerät-Component-TF-Funkgerät-radio_zlic> a sys:Message ;
+    rdfs:label "Funkspruch vom ZL"^^xsd:string ;
+    sys:hasReceiver <https://frittenburger.de/2022/11/EULYNX#Component-TF-Funkgerät> ;
+    sys:hasSender <https://frittenburger.de/2022/11/EULYNX#Component-ZLIC-Funkgerät> ;
+    sys:messageName "radio_zlic"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SimulatorModel-lausitz-Simulator-Model> a fldg:SimulatorModel ;
+    rdfs:label "lausitz Simulator Model"^^xsd:string ;
+    fldg:hasInfrastructure <https://frittenburger.de/2022/11/EULYNX#Point-Point-02cf7ef1-e950-4217-918c-58f6a157581a>,
+        <https://frittenburger.de/2022/11/EULYNX#Point-Point-0c60cd17-9815-4c03-90eb-ecbe71e01c9c>,
+        <https://frittenburger.de/2022/11/EULYNX#Point-Point-31f2be84-65ee-4193-9e42-b24f9b3ce5b5>,
+        <https://frittenburger.de/2022/11/EULYNX#Point-Point-46635504-f6c6-4d24-928e-712118023d7e>,
+        <https://frittenburger.de/2022/11/EULYNX#Point-Point-caba7108-af52-4f4f-aeae-8d52a378a853>,
+        <https://frittenburger.de/2022/11/EULYNX#Point-Point-d25723aa-aa04-4376-a837-c8c091ae8ebf>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E1>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E2>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E3>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E4>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A1>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A1b>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A2>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A2b>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B1>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B1b>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B2>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B2b>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60WE1>,
+        <https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60WE2> .
+
+<https://frittenburger.de/2022/11/EULYNX#Subsystem-FeldElement/Weiche> a sys:Subsystem ;
+    rdfs:label "FeldElement/Weiche"^^xsd:string ;
+    sys:hasComponent <https://frittenburger.de/2022/11/EULYNX#Component-ObjectController>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Weichenlagemelder> .
+
+<https://frittenburger.de/2022/11/EULYNX#Subsystem-Simulator> a sys:Subsystem ;
+    rdfs:label "Simulator"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Subsystem-Zugleiter-in-the-Cloud> a sys:Subsystem ;
+    rdfs:label "Zugleiter in the Cloud"^^xsd:string ;
+    sys:hasComponent <https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-NaturalLanguageUnderstanding>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Nothalt>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-RadioIO>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-SIP-Server>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-SpeechToText>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Stellprozess>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-TextToSpeech>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-Tracing>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-ZLIC-Funkgerät> .
+
+<https://frittenburger.de/2022/11/EULYNX#Subsystem-balise> a sys:Subsystem ;
+    rdfs:label "Festdatenbalise"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Subsystem-train> a sys:Subsystem ;
+    rdfs:label "Zug"^^xsd:string ;
+    sys:hasComponent <https://frittenburger.de/2022/11/EULYNX#Component-TF-Funkgerät>,
+        <https://frittenburger.de/2022/11/EULYNX#Component-TF-Tablet> .
+
+<https://frittenburger.de/2022/11/EULYNX#TopEvent-zf_wrong_understanding> a ns1:TopEvent ;
+    rdfs:label "Zf hats falsch verstanden"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#TopEvent-zlic_failure> a ns1:TopEvent ;
+    rdfs:label "ZLiC fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_zlic_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#TraciModel-lausitz-SUMO-/-Traci-Model> a fldg:TraciModel ;
+    rdfs:label "lausitz SUMO / Traci Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Digitales-Belegblatt_Visualisiert-die-Belegung-der-Strecke._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Visualisiert die Belegung der Strecke.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Digitales-Belegblatt_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Digitales-Belegblatt_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Festdatenbalise_failure> a ns1:BasicEvent ;
+    rdfs:label "Festdatenbalise fällt aus"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-NaturalLanguageUnderstanding_Erkennt-Absichten-(intends)-im-Text._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Erkennt Absichten (intends) im Text.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-NaturalLanguageUnderstanding_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-NaturalLanguageUnderstanding_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Nothalt_Gibt-einen-Nothaltauftrag-ab._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Gibt einen Nothaltauftrag ab.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Nothalt_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Nothalt_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-ObjectController_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-ObjectController_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-ObjectController_Übernimmt-die-Kommunikation-zu-den-Feldelementen._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Übernimmt die Kommunikation zu den Feldelementen.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-RadioIO_Konvertiert-die-Kommunikation-zwischen-Funkgerät-und-ZLic-API_failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Konvertiert die Kommunikation zwischen Funkgerät und ZLic-API' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-RadioIO_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-RadioIO_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-SIP-Server_Stellt-einen-Websocket-für-den-Austausch-von-Wav-Dateien-zur-Verfügung._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Stellt einen Websocket für den Austausch von Wav-Dateien zur Verfügung.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-SIP-Server_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-SIP-Server_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Simulator_failure> a ns1:BasicEvent ;
+    rdfs:label "Simulator fällt aus"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-SpeechToText_Konvertiert-WAV-Dateien-in-Text._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Konvertiert WAV-Dateien in Text.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-SpeechToText_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-SpeechToText_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Stellprozess_Prüfung-und-Reservierung-der-Strecke._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Prüfung und Reservierung der Strecke.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Stellprozess_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Stellprozess_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Funkgerät_Erlaubt-die-Kommunikation-mit-dem-Zugleiter-in-the-Cloud._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Erlaubt die Kommunikation mit dem Zugleiter in the Cloud.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Funkgerät_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Funkgerät_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Tablet_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Tablet_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Tablet_Übernimmt-die-Visualisierung-des-Digitalen-Belegblatts._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Übernimmt die Visualisierung des Digitalen Belegblatts.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-TextToSpeech_Konvertiert-Text-in-WAV-Dateien._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Konvertiert Text in WAV-Dateien.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-TextToSpeech_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-TextToSpeech_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Tracing_Loggt-den-Nachrichtenverkehr-innerhalb-des-ZLiC_failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Loggt den Nachrichtenverkehr innerhalb des ZLiC' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Tracing_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Tracing_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Weichenlagemelder_Weichenlage-wird-angezeigt._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Weichenlage wird angezeigt.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Weichenlagemelder_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-Weichenlagemelder_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-ZLIC-Funkgerät_Erlaubt-die-Kommunikation-mit-dem-TF._failure> a ns1:BasicEvent ;
+    rdfs:label "Function 'Erlaubt die Kommunikation mit dem TF.' nicht verfügbar"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-ZLIC-Funkgerät_failure_harddisk> a ns1:BasicEvent ;
+    rdfs:label "Festplatte voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#BasicEvent-ZLIC-Funkgerät_failure_memory> a ns1:BasicEvent ;
+    rdfs:label "Hauptpeicher voll"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-Weichenlagemelder> a sys:Component ;
+    rdfs:label "Weichenlagemelder"^^xsd:string ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Weichenlage-wird-angezeigt.> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Ankunftsmeldung-caller_id> a tel:DataField ;
+    tel:elementName "caller_id"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Ankunftsmeldung-meldestelle> a tel:DataField ;
+    tel:elementName "meldestelle"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Ankunftsmeldung-zugnummer> a tel:DataField ;
+    tel:elementName "zugnummer"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Integer-Integer> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Anmeldung-caller_id> a tel:DataField ;
+    tel:elementName "caller_id"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Anmeldung-zugnummer> a tel:DataField ;
+    tel:elementName "zugnummer"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Integer-Integer> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Audio-audio> a tel:DataField ;
+    tel:elementName "audio"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Bytes-Bytes> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Audio-caller_id> a tel:DataField ;
+    tel:elementName "caller_id"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Command-caller_id> a tel:DataField ;
+    tel:elementName "caller_id"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Command-command_type> a tel:DataField ;
+    tel:elementName "command_type"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Command-text> a tel:DataField ;
+    tel:elementName "text"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-EmergencyAudio-audio> a tel:DataField ;
+    tel:elementName "audio"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Bytes-Bytes> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-EmergencyStop-text> a tel:DataField ;
+    tel:elementName "text"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-EmergencyStopControl-command> a tel:DataField ;
+    tel:elementName "command"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-EmergencyStopRequest-caller_id> a tel:DataField ;
+    tel:elementName "caller_id"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Fahranfrage-caller_id> a tel:DataField ;
+    tel:elementName "caller_id"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Fahranfrage-meldestelle> a tel:DataField ;
+    tel:elementName "meldestelle"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Fahranfrage-zugnummer> a tel:DataField ;
+    tel:elementName "zugnummer"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Integer-Integer> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-FahrbefehlWiederholung-caller_id> a tel:DataField ;
+    tel:elementName "caller_id"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-FahrbefehlWiederholung-meldestelle> a tel:DataField ;
+    tel:elementName "meldestelle"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-FahrbefehlWiederholung-zugnummer> a tel:DataField ;
+    tel:elementName "zugnummer"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Integer-Integer> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-FreeRoute-routes> a tel:DataField ;
+    tel:elementName "routes"^^xsd:string ;
+    tel:hasArrayItemDataType <https://frittenburger.de/2022/11/EULYNX#Structure-Route> ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Array-Array> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-FreeRoute-zugnummer> a tel:DataField ;
+    tel:elementName "zugnummer"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Integer-Integer> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-FreeRouteResponse-status> a tel:DataField ;
+    tel:elementName "status"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Integer-Integer> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-FreeRouteResponse-zugnummer> a tel:DataField ;
+    tel:elementName "zugnummer"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Integer-Integer> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-NegativeBestaetigung-caller_id> a tel:DataField ;
+    tel:elementName "caller_id"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-PositiveBestaetigung-caller_id> a tel:DataField ;
+    tel:elementName "caller_id"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Route-meldestelle_from> a tel:DataField ;
+    tel:elementName "meldestelle_from"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Route-meldestelle_to> a tel:DataField ;
+    tel:elementName "meldestelle_to"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-SetRoute-routes> a tel:DataField ;
+    tel:elementName "routes"^^xsd:string ;
+    tel:hasArrayItemDataType <https://frittenburger.de/2022/11/EULYNX#Structure-Route> ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Array-Array> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-SetRoute-zugnummer> a tel:DataField ;
+    tel:elementName "zugnummer"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Integer-Integer> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-SetRouteResponse-status> a tel:DataField ;
+    tel:elementName "status"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Integer-Integer> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-SetRouteResponse-zugnummer> a tel:DataField ;
+    tel:elementName "zugnummer"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#Integer-Integer> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Transcribed-caller_id> a tel:DataField ;
+    tel:elementName "caller_id"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#DataField-Transcribed-text> a tel:DataField ;
+    tel:elementName "text"^^xsd:string ;
+    tel:hasDataType <https://frittenburger.de/2022/11/EULYNX#String-String> .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Erkennt-Absichten-(intends)-im-Text.> a sys:Function ;
+    rdfs:label "Erkennt Absichten (intends) im Text."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Erlaubt-die-Kommunikation-mit-dem-TF.> a sys:Function ;
+    rdfs:label "Erlaubt die Kommunikation mit dem TF."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Erlaubt-die-Kommunikation-mit-dem-Zugleiter-in-the-Cloud.> a sys:Function ;
+    rdfs:label "Erlaubt die Kommunikation mit dem Zugleiter in the Cloud."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Gibt-einen-Nothaltauftrag-ab.> a sys:Function ;
+    rdfs:label "Gibt einen Nothaltauftrag ab."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Konvertiert-Text-in-WAV-Dateien.> a sys:Function ;
+    rdfs:label "Konvertiert Text in WAV-Dateien."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Konvertiert-WAV-Dateien-in-Text.> a sys:Function ;
+    rdfs:label "Konvertiert WAV-Dateien in Text."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Konvertiert-die-Kommunikation-zwischen-Funkgerät-und-ZLic-API> a sys:Function ;
+    rdfs:label "Konvertiert die Kommunikation zwischen Funkgerät und ZLic-API"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Loggt-den-Nachrichtenverkehr-innerhalb-des-ZLiC> a sys:Function ;
+    rdfs:label "Loggt den Nachrichtenverkehr innerhalb des ZLiC"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Prüfung-und-Reservierung-der-Strecke.> a sys:Function ;
+    rdfs:label "Prüfung und Reservierung der Strecke."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Stellt-einen-Websocket-für-den-Austausch-von-Wav-Dateien-zur-Verfügung.> a sys:Function ;
+    rdfs:label "Stellt einen Websocket für den Austausch von Wav-Dateien zur Verfügung."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Visualisiert-die-Belegung-der-Strecke.> a sys:Function ;
+    rdfs:label "Visualisiert die Belegung der Strecke."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Weichenlage-wird-angezeigt.> a sys:Function ;
+    rdfs:label "Weichenlage wird angezeigt."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Übernimmt-die-Kommunikation-zu-den-Feldelementen.> a sys:Function ;
+    rdfs:label "Übernimmt die Kommunikation zu den Feldelementen."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Function-Übernimmt-die-Visualisierung-des-Digitalen-Belegblatts.> a sys:Function ;
+    rdfs:label "Übernimmt die Visualisierung des Digitalen Belegblatts."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Digitales-Belegblatt_failure> a ns1:IntermediateEvent ;
+    rdfs:label "Digitales Belegblatt fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_Digitales-Belegblatt_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-FeldElement/Weiche_failure> a ns1:IntermediateEvent ;
+    rdfs:label "FeldElement/Weiche fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_FeldElement/Weiche_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-NaturalLanguageUnderstanding_failure> a ns1:IntermediateEvent ;
+    rdfs:label "NaturalLanguageUnderstanding fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_NaturalLanguageUnderstanding_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Nothalt_failure> a ns1:IntermediateEvent ;
+    rdfs:label "Nothalt fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_Nothalt_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-ObjectController_failure> a ns1:IntermediateEvent ;
+    rdfs:label "ObjectController fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_ObjectController_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-RadioIO_failure> a ns1:IntermediateEvent ;
+    rdfs:label "RadioIO fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_RadioIO_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-SIP-Server_failure> a ns1:IntermediateEvent ;
+    rdfs:label "SIP Server fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_SIP-Server_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-SpeechToText_failure> a ns1:IntermediateEvent ;
+    rdfs:label "SpeechToText fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_SpeechToText_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Stellprozess_failure> a ns1:IntermediateEvent ;
+    rdfs:label "Stellprozess fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_Stellprozess_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-TF-Funkgerät_failure> a ns1:IntermediateEvent ;
+    rdfs:label "TF-Funkgerät fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_TF-Funkgerät_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-TF-Tablet_failure> a ns1:IntermediateEvent ;
+    rdfs:label "TF-Tablet fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_TF-Tablet_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-TextToSpeech_failure> a ns1:IntermediateEvent ;
+    rdfs:label "TextToSpeech fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_TextToSpeech_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Tracing_failure> a ns1:IntermediateEvent ;
+    rdfs:label "Tracing fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_Tracing_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Weichenlagemelder_failure> a ns1:IntermediateEvent ;
+    rdfs:label "Weichenlagemelder fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_Weichenlagemelder_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-ZLIC-Funkgerät_failure> a ns1:IntermediateEvent ;
+    rdfs:label "ZLIC-Funkgerät fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_ZLIC-Funkgerät_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Zug_failure> a ns1:IntermediateEvent ;
+    rdfs:label "Zug fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_Zug_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Zugleiter-in-the-Cloud_failure> a ns1:IntermediateEvent ;
+    rdfs:label "Zugleiter in the Cloud fällt aus"^^xsd:string ;
+    ns1:hasGate <https://frittenburger.de/2022/11/EULYNX#OrGate-or_Zugleiter-in-the-Cloud_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_Digitales-Belegblatt_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Digitales-Belegblatt_Visualisiert-die-Belegung-der-Strecke._failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Digitales-Belegblatt_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Digitales-Belegblatt_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_FeldElement/Weiche_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-ObjectController_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Weichenlagemelder_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_NaturalLanguageUnderstanding_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-NaturalLanguageUnderstanding_Erkennt-Absichten-(intends)-im-Text._failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-NaturalLanguageUnderstanding_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-NaturalLanguageUnderstanding_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_Nothalt_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Nothalt_Gibt-einen-Nothaltauftrag-ab._failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Nothalt_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Nothalt_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_ObjectController_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-ObjectController_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-ObjectController_failure_memory>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-ObjectController_Übernimmt-die-Kommunikation-zu-den-Feldelementen._failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_RadioIO_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-RadioIO_Konvertiert-die-Kommunikation-zwischen-Funkgerät-und-ZLic-API_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-RadioIO_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-RadioIO_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_SIP-Server_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-SIP-Server_Stellt-einen-Websocket-für-den-Austausch-von-Wav-Dateien-zur-Verfügung._failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-SIP-Server_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-SIP-Server_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_SpeechToText_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-SpeechToText_Konvertiert-WAV-Dateien-in-Text._failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-SpeechToText_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-SpeechToText_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_Stellprozess_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Stellprozess_Prüfung-und-Reservierung-der-Strecke._failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Stellprozess_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Stellprozess_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_TF-Funkgerät_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Funkgerät_Erlaubt-die-Kommunikation-mit-dem-Zugleiter-in-the-Cloud._failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Funkgerät_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Funkgerät_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_TF-Tablet_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Tablet_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Tablet_failure_memory>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-TF-Tablet_Übernimmt-die-Visualisierung-des-Digitalen-Belegblatts._failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_TextToSpeech_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-TextToSpeech_Konvertiert-Text-in-WAV-Dateien._failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-TextToSpeech_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-TextToSpeech_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_Tracing_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Tracing_Loggt-den-Nachrichtenverkehr-innerhalb-des-ZLiC_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Tracing_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Tracing_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_Weichenlagemelder_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Weichenlagemelder_Weichenlage-wird-angezeigt._failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Weichenlagemelder_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Weichenlagemelder_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_ZLIC-Funkgerät_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-ZLIC-Funkgerät_Erlaubt-die-Kommunikation-mit-dem-TF._failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-ZLIC-Funkgerät_failure_harddisk>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-ZLIC-Funkgerät_failure_memory> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_Zug_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-TF-Funkgerät_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-TF-Tablet_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_Zugleiter-in-the-Cloud_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Digitales-Belegblatt_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-NaturalLanguageUnderstanding_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Nothalt_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-RadioIO_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-SIP-Server_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-SpeechToText_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Stellprozess_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-TextToSpeech_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Tracing_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-ZLIC-Funkgerät_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#OrGate-or_zlic_failure> a ns1:OrGate ;
+    rdfs:label "OR"^^xsd:string ;
+    ns1:hasEvent <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Festdatenbalise_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#BasicEvent-Simulator_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-FeldElement/Weiche_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Zug_failure>,
+        <https://frittenburger.de/2022/11/EULYNX#IntermediateEvent-Zugleiter-in-the-Cloud_failure> .
+
+<https://frittenburger.de/2022/11/EULYNX#PlanProModel-lausitz-PlanProModel> a fldg:PlanProModel ;
+    rdfs:label "lausitz PlanProModel"^^xsd:string ;
+    fldg:filename "data/lausitz.ppxml.ppxml"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60A2-to-60E3> a fldg:RouteSection ;
+    rdfs:label "RouteSection from 60A2 to 60E3"^^xsd:string ;
+    fldg:direction "out"^^xsd:string ;
+    fldg:fromSignal "60A2"^^xsd:string ;
+    fldg:toSignal "60E3"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60B1-to-60E2> a fldg:RouteSection ;
+    rdfs:label "RouteSection from 60B1 to 60E2"^^xsd:string ;
+    fldg:direction "back"^^xsd:string ;
+    fldg:fromSignal "60B1"^^xsd:string ;
+    fldg:toSignal "60E2"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60E1-to-60A2> a fldg:RouteSection ;
+    rdfs:label "RouteSection from 60E1 to 60A2"^^xsd:string ;
+    fldg:direction "out"^^xsd:string ;
+    fldg:fromSignal "60E1"^^xsd:string ;
+    fldg:inStation <https://frittenburger.de/2022/11/EULYNX#Station-Station-S-Berg> ;
+    fldg:toSignal "60A2"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60E2-to-60WE2> a fldg:RouteSection ;
+    rdfs:label "RouteSection from 60E2 to 60WE2"^^xsd:string ;
+    fldg:direction "back"^^xsd:string ;
+    fldg:fromSignal "60E2"^^xsd:string ;
+    fldg:toSignal "60WE2"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60E3-to-60WE1> a fldg:RouteSection ;
+    rdfs:label "RouteSection from 60E3 to 60WE1"^^xsd:string ;
+    fldg:direction "out"^^xsd:string ;
+    fldg:fromSignal "60E3"^^xsd:string ;
+    fldg:toSignal "60WE1"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60E4-to-60B1> a fldg:RouteSection ;
+    rdfs:label "RouteSection from 60E4 to 60B1"^^xsd:string ;
+    fldg:direction "back"^^xsd:string ;
+    fldg:fromSignal "60E4"^^xsd:string ;
+    fldg:inStation <https://frittenburger.de/2022/11/EULYNX#Station-Station-C-Dorf> ;
+    fldg:toSignal "60B1"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60WE1-to-60B2> a fldg:RouteSection ;
+    rdfs:label "RouteSection from 60WE1 to 60B2"^^xsd:string ;
+    fldg:direction "out"^^xsd:string ;
+    fldg:fromSignal "60WE1"^^xsd:string ;
+    fldg:inStation <https://frittenburger.de/2022/11/EULYNX#Station-Station-C-Dorf> ;
+    fldg:toSignal "60B2"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60WE2-to-60A1> a fldg:RouteSection ;
+    rdfs:label "RouteSection from 60WE2 to 60A1"^^xsd:string ;
+    fldg:direction "back"^^xsd:string ;
+    fldg:fromSignal "60WE2"^^xsd:string ;
+    fldg:inStation <https://frittenburger.de/2022/11/EULYNX#Station-Station-S-Berg> ;
+    fldg:toSignal "60A1"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#StateMachine-Train-Supervision> a sm:StateMachine ;
+    rdfs:label "Train Supervision"^^xsd:string ;
+    sm:contains <https://frittenburger.de/2022/11/EULYNX#Action-Arrival>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-ArrivalTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-AutomaticDeletePosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-ClearDrivingRequest>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-CorrectDrivingPermissionReplay>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-DeletePosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-DeletePositionTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-DrivingPermissionTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-FreeRoute>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-FreeRouteTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-NegativArrivalConfirmation>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-NegativeDeletePosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-NegativeFreeRouteResponse>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-NegativeSetPosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-NegativeSetRouteResponse>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-PositivArrivalConfirmation>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-PositiveDeletePosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-PositiveFreeRouteResponse>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-PositiveSetPosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-PositiveSetRouteResponse>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-Registration>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-SetPosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-SetPositionTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-SetRoute>,
+        <https://frittenburger.de/2022/11/EULYNX#Action-WrongDrivingPermissionReplay>,
+        <https://frittenburger.de/2022/11/EULYNX#Event-ArrivalMessage>,
+        <https://frittenburger.de/2022/11/EULYNX#Event-Deregister>,
+        <https://frittenburger.de/2022/11/EULYNX#Event-DrivingPermissionReplayMessage>,
+        <https://frittenburger.de/2022/11/EULYNX#Event-DrivingRequestMessage>,
+        <https://frittenburger.de/2022/11/EULYNX#Event-FreeRouteResponseMessage>,
+        <https://frittenburger.de/2022/11/EULYNX#Event-NegativeConfirmationMessage>,
+        <https://frittenburger.de/2022/11/EULYNX#Event-PositiveConfirmationMessage>,
+        <https://frittenburger.de/2022/11/EULYNX#Event-RegistrationMessage>,
+        <https://frittenburger.de/2022/11/EULYNX#Event-SetRouteResponseMessage>,
+        <https://frittenburger.de/2022/11/EULYNX#Event-Timer>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-ArrivalTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-CorrectDrivingPermission>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-DrivingPermissionTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-FirstArrival>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-FreeRouteTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-LastArrival>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-NegativeFreeRouteResponse>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-NegativeSetRouteResponse>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-PositiveFreeRouteResponse>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-PositiveSetRouteResponse>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-SetRouteTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-ValidArrivalMessage>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-ValidDrivingRequest>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-ValidRoute>,
+        <https://frittenburger.de/2022/11/EULYNX#Guard-WrongDrivingPermission>,
+        <https://frittenburger.de/2022/11/EULYNX#InitialState-Init>,
+        <https://frittenburger.de/2022/11/EULYNX#State-Arrival>,
+        <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition>,
+        <https://frittenburger.de/2022/11/EULYNX#State-DeletePosition>,
+        <https://frittenburger.de/2022/11/EULYNX#State-Deregistered>,
+        <https://frittenburger.de/2022/11/EULYNX#State-DrivingPermission>,
+        <https://frittenburger.de/2022/11/EULYNX#State-DrivingRequest>,
+        <https://frittenburger.de/2022/11/EULYNX#State-Error>,
+        <https://frittenburger.de/2022/11/EULYNX#State-FreeRoute>,
+        <https://frittenburger.de/2022/11/EULYNX#State-InMovement>,
+        <https://frittenburger.de/2022/11/EULYNX#State-SetPosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-Arrival>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-ArrivalConfirmed>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-ArrivalDeviated>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-ArrivalTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-AutomaticDeletePosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-CorrectDrivingPermissionReplay>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-DeletePosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-DeletePositionTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-DrivingPermission>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-DrivingPermissionTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-DrivingRequest>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-DrivingRequestTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-FreeRoute>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-FreeRouteTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-NegativeDeletePosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-NegativeFreeRouteResponse>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-NegativeSetPosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-PositiveDeletePosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-PositiveFreeRouteResponse>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-PositiveSetPosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-Registration>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-SetPosition>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-SetPositionTimeout>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-TryAgainLater>,
+        <https://frittenburger.de/2022/11/EULYNX#Transition-WrongDrivingPermissionReplay> .
+
+<https://frittenburger.de/2022/11/EULYNX#StationModel-lausitz-Station-Model> a fldg:StationModel ;
+    rdfs:label "lausitz Station Model"^^xsd:string ;
+    fldg:hasStation <https://frittenburger.de/2022/11/EULYNX#Station-Station-C-Dorf>,
+        <https://frittenburger.de/2022/11/EULYNX#Station-Station-S-Berg> .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-Ankunftsmeldung> a tel:Structure ;
+    rdfs:label "Ankunftsmeldung"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-Ankunftsmeldung-caller_id>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-Ankunftsmeldung-meldestelle>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-Ankunftsmeldung-zugnummer> ;
+    tel:structureName "Ankunftsmeldung"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-Anmeldung> a tel:Structure ;
+    rdfs:label "Anmeldung"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-Anmeldung-caller_id>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-Anmeldung-zugnummer> ;
+    tel:structureName "Anmeldung"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-EmergencyAudio> a tel:Structure ;
+    rdfs:label "EmergencyAudio"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-EmergencyAudio-audio> ;
+    tel:structureName "EmergencyAudio"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-EmergencyStop> a tel:Structure ;
+    rdfs:label "EmergencyStop"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-EmergencyStop-text> ;
+    tel:structureName "EmergencyStop"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-EmergencyStopControl> a tel:Structure ;
+    rdfs:label "EmergencyStopControl"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-EmergencyStopControl-command> ;
+    tel:structureName "EmergencyStopControl"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-EmergencyStopRequest> a tel:Structure ;
+    rdfs:label "EmergencyStopRequest"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-EmergencyStopRequest-caller_id> ;
+    tel:structureName "EmergencyStopRequest"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-Fahranfrage> a tel:Structure ;
+    rdfs:label "Fahranfrage"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-Fahranfrage-caller_id>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-Fahranfrage-meldestelle>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-Fahranfrage-zugnummer> ;
+    tel:structureName "Fahranfrage"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-FahrbefehlWiederholung> a tel:Structure ;
+    rdfs:label "FahrbefehlWiederholung"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-FahrbefehlWiederholung-caller_id>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-FahrbefehlWiederholung-meldestelle>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-FahrbefehlWiederholung-zugnummer> ;
+    tel:structureName "FahrbefehlWiederholung"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-FreeRoute> a tel:Structure ;
+    rdfs:label "FreeRoute"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-FreeRoute-routes>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-FreeRoute-zugnummer> ;
+    tel:structureName "FreeRoute"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-FreeRouteResponse> a tel:Structure ;
+    rdfs:label "FreeRouteResponse"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-FreeRouteResponse-status>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-FreeRouteResponse-zugnummer> ;
+    tel:structureName "FreeRouteResponse"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-NegativeBestaetigung> a tel:Structure ;
+    rdfs:label "NegativeBestaetigung"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-NegativeBestaetigung-caller_id> ;
+    tel:structureName "NegativeBestaetigung"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-PositiveBestaetigung> a tel:Structure ;
+    rdfs:label "PositiveBestaetigung"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-PositiveBestaetigung-caller_id> ;
+    tel:structureName "PositiveBestaetigung"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-SetRoute> a tel:Structure ;
+    rdfs:label "SetRoute"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-SetRoute-routes>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-SetRoute-zugnummer> ;
+    tel:structureName "SetRoute"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-SetRouteResponse> a tel:Structure ;
+    rdfs:label "SetRouteResponse"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-SetRouteResponse-status>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-SetRouteResponse-zugnummer> ;
+    tel:structureName "SetRouteResponse"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-Transcribed> a tel:Structure ;
+    rdfs:label "Transcribed"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-Transcribed-caller_id>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-Transcribed-text> ;
+    tel:structureName "Transcribed"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Track-Track-for-S-Berg-C-Dorf> a fldg:Track ;
+    rdfs:label "Track for S-Berg-C-Dorf"^^xsd:string ;
+    fldg:hasRouteSection [ a rdf:Seq ;
+            rdf:_1 <https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60E1-to-60A2> ;
+            rdf:_2 <https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60A2-to-60E3> ;
+            rdf:_3 <https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60E3-to-60WE1> ;
+            rdf:_4 <https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60WE1-to-60B2> ;
+            rdf:_5 <https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60E4-to-60B1> ;
+            rdf:_6 <https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60B1-to-60E2> ;
+            rdf:_7 <https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60E2-to-60WE2> ;
+            rdf:_8 <https://frittenburger.de/2022/11/EULYNX#RouteSection-RouteSection-from-60WE2-to-60A1> ] ;
+    fldg:hasStopOverStation <https://frittenburger.de/2022/11/EULYNX#Station-Station-C-Dorf>,
+        <https://frittenburger.de/2022/11/EULYNX#Station-Station-S-Berg> .
+
+<https://frittenburger.de/2022/11/EULYNX#TrackModel-lausitz-Track-Model> a fldg:TrackModel ;
+    rdfs:label "lausitz Track Model"^^xsd:string ;
+    fldg:hasTrack <https://frittenburger.de/2022/11/EULYNX#Track-Track-for-S-Berg-C-Dorf> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-Arrival> a sm:Transition ;
+    rdfs:label "Arrival"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-InMovement> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-Arrival> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-Arrival> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-ArrivalMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-ValidArrivalMessage> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-ArrivalConfirmed> a sm:Transition ;
+    rdfs:label "ArrivalConfirmed"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-Arrival> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-PositivArrivalConfirmation> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-PositiveConfirmationMessage> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-ArrivalDeviated> a sm:Transition ;
+    rdfs:label "ArrivalDeviated"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-Arrival> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-InMovement> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-NegativArrivalConfirmation> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-NegativeConfirmationMessage> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-ArrivalTimeout> a sm:Transition ;
+    rdfs:label "ArrivalTimeout"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-Arrival> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-InMovement> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-ArrivalTimeout> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-Timer> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-ArrivalTimeout> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-AutomaticDeletePosition> a sm:Transition ;
+    rdfs:label "AutomaticDeletePosition"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-DeletePosition> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-AutomaticDeletePosition> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-Timer> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-LastArrival> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-CorrectDrivingPermissionReplay> a sm:Transition ;
+    rdfs:label "CorrectDrivingPermissionReplay"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-DrivingPermission> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-InMovement> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-CorrectDrivingPermissionReplay> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-DrivingPermissionReplayMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-CorrectDrivingPermission> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-DeletePosition> a sm:Transition ;
+    rdfs:label "DeletePosition"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-DeletePosition> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-DeletePosition> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-Deregister> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-DeletePositionTimeout> a sm:Transition ;
+    rdfs:label "DeletePositionTimeout"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-DeletePosition> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-Error> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-DeletePositionTimeout> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-Timer> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-FreeRouteTimeout> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-DrivingPermission> a sm:Transition ;
+    rdfs:label "DrivingPermission"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-DrivingRequest> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-DrivingPermission> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-PositiveSetRouteResponse> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-SetRouteResponseMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-PositiveSetRouteResponse> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-DrivingPermissionTimeout> a sm:Transition ;
+    rdfs:label "DrivingPermissionTimeout"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-DrivingPermission> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-FreeRoute> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-DrivingPermissionTimeout> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-Timer> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-DrivingPermissionTimeout> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-DrivingRequest> a sm:Transition ;
+    rdfs:label "DrivingRequest"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-DrivingRequest> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-SetRoute> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-DrivingRequestMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-ValidDrivingRequest> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-DrivingRequestTimeout> a sm:Transition ;
+    rdfs:label "DrivingRequestTimeout"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-DrivingRequest> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-ClearDrivingRequest> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-Timer> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-SetRouteTimeout> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-FreeRoute> a sm:Transition ;
+    rdfs:label "FreeRoute"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-FreeRoute> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-FreeRoute> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-Timer> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-ValidRoute> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-FreeRouteTimeout> a sm:Transition ;
+    rdfs:label "FreeRouteTimeout"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-FreeRoute> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-FreeRouteTimeout> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-Timer> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-FreeRouteTimeout> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-NegativeDeletePosition> a sm:Transition ;
+    rdfs:label "NegativeDeletePosition"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-DeletePosition> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-Error> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-NegativeDeletePosition> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-FreeRouteResponseMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-NegativeFreeRouteResponse> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-NegativeFreeRouteResponse> a sm:Transition ;
+    rdfs:label "NegativeFreeRouteResponse"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-FreeRoute> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-NegativeFreeRouteResponse> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-FreeRouteResponseMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-NegativeFreeRouteResponse> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-NegativeSetPosition> a sm:Transition ;
+    rdfs:label "NegativeSetPosition"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-SetPosition> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-Error> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-NegativeSetPosition> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-SetRouteResponseMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-NegativeSetRouteResponse> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-PositiveDeletePosition> a sm:Transition ;
+    rdfs:label "PositiveDeletePosition"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-DeletePosition> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-Deregistered> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-PositiveDeletePosition> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-FreeRouteResponseMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-PositiveFreeRouteResponse> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-PositiveFreeRouteResponse> a sm:Transition ;
+    rdfs:label "PositiveFreeRouteResponse"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-FreeRoute> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-PositiveFreeRouteResponse> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-FreeRouteResponseMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-PositiveFreeRouteResponse> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-PositiveSetPosition> a sm:Transition ;
+    rdfs:label "PositiveSetPosition"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-SetPosition> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-PositiveSetPosition> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-SetRouteResponseMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-PositiveSetRouteResponse> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-Registration> a sm:Transition ;
+    rdfs:label "Registration"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#InitialState-Init> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-InMovement> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-Registration> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-RegistrationMessage> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-SetPosition> a sm:Transition ;
+    rdfs:label "SetPosition"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-SetPosition> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-SetPosition> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-Timer> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-FirstArrival> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-SetPositionTimeout> a sm:Transition ;
+    rdfs:label "SetPositionTimeout"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-SetPosition> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-Error> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-SetPositionTimeout> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-Timer> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-SetRouteTimeout> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-TryAgainLater> a sm:Transition ;
+    rdfs:label "TryAgainLater"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-DrivingRequest> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-NegativeSetRouteResponse> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-SetRouteResponseMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-NegativeSetRouteResponse> .
+
+<https://frittenburger.de/2022/11/EULYNX#Transition-WrongDrivingPermissionReplay> a sm:Transition ;
+    rdfs:label "WrongDrivingPermissionReplay"^^xsd:string ;
+    sm:source <https://frittenburger.de/2022/11/EULYNX#State-DrivingPermission> ;
+    sm:target <https://frittenburger.de/2022/11/EULYNX#State-FreeRoute> ;
+    sm:transitionAction <https://frittenburger.de/2022/11/EULYNX#Action-WrongDrivingPermissionReplay> ;
+    sm:transitionEvent <https://frittenburger.de/2022/11/EULYNX#Event-DrivingPermissionReplayMessage> ;
+    sm:transitionGuard <https://frittenburger.de/2022/11/EULYNX#Guard-WrongDrivingPermission> .
+
+<https://frittenburger.de/2022/11/EULYNX#VoiceProtocolOptionsModel-Voice-Protocol-Options-Model> a fldg:VoiceProtocolOptionsModel ;
+    rdfs:label "Voice Protocol Options Model"^^xsd:string ;
+    fldg:automaticTrainDeregistration false ;
+    fldg:automaticTrainRegistration false .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-Arrival> a sm:Action ;
+    rdfs:label "Arrival"^^xsd:string ;
+    rdfs:comment """Send ArrivalReplay message
+set Meldestelle
+set ArrivalTimeout
+set CallerId"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-ArrivalTimeout> a sm:Action ;
+    rdfs:label "ArrivalTimeout"^^xsd:string ;
+    rdfs:comment """reset ArrivalTimeout
+reset CallerId
+reset Meldestelle"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-AutomaticDeletePosition> a sm:Action ;
+    rdfs:label "AutomaticDeletePosition"^^xsd:string ;
+    rdfs:comment """set FreeRouteTimeout
+send FreeRoute"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-ClearDrivingRequest> a sm:Action ;
+    rdfs:label "ClearDrivingRequest"^^xsd:string ;
+    rdfs:comment """reset SetRouteTimeout
+reset meldestelle_from and meldestelle_to
+reset CallerId"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-CorrectDrivingPermissionReplay> a sm:Action ;
+    rdfs:label "CorrectDrivingPermissionReplay"^^xsd:string ;
+    rdfs:comment """reset DrivingPermissionTimeout
+Send PositivConfirmation
+reset CallerId"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-DeletePosition> a sm:Action ;
+    rdfs:label "DeletePosition"^^xsd:string ;
+    rdfs:comment """set FreeRouteTimeout
+send FreeRoute"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-DeletePositionTimeout> a sm:Action ;
+    rdfs:label "DeletePositionTimeout"^^xsd:string ;
+    rdfs:comment """reset FreeRouteTimeout
+Send System Fehler"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-DrivingPermissionTimeout> a sm:Action ;
+    rdfs:label "DrivingPermissionTimeout"^^xsd:string ;
+    rdfs:comment """reset DrivingPermissionTimeout
+reset CallerId"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-FreeRoute> a sm:Action ;
+    rdfs:label "FreeRoute"^^xsd:string ;
+    rdfs:comment """set FreeRouteTimeout
+send FreeRoute"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-FreeRouteTimeout> a sm:Action ;
+    rdfs:label "FreeRouteTimeout"^^xsd:string ;
+    rdfs:comment """reset FreeRouteTimeout
+reset meldestelle_from and meldestelle_to
+Send System Fehler"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-NegativArrivalConfirmation> a sm:Action ;
+    rdfs:label "NegativArrivalConfirmation"^^xsd:string ;
+    rdfs:comment """reset ArrivalTimeout
+reset CallerId
+reset Meldestelle"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-NegativeDeletePosition> a sm:Action ;
+    rdfs:label "NegativeDeletePosition"^^xsd:string ;
+    rdfs:comment """reset FreeRouteTimeout
+Send System Fehler"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-NegativeFreeRouteResponse> a sm:Action ;
+    rdfs:label "NegativeFreeRouteResponse"^^xsd:string ;
+    rdfs:comment """reset FreeRouteTimeout
+reset meldestelle_from and meldestelle_to
+Send System Fehler"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-NegativeSetPosition> a sm:Action ;
+    rdfs:label "NegativeSetPosition"^^xsd:string ;
+    rdfs:comment """reset SetRouteTimeout
+Send System Fehler"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-NegativeSetRouteResponse> a sm:Action ;
+    rdfs:label "NegativeSetRouteResponse"^^xsd:string ;
+    rdfs:comment """reset SetRouteTimeout
+send WaitingNotification
+reset meldestelle_from and meldestelle_to
+reset CallerId"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-PositivArrivalConfirmation> a sm:Action ;
+    rdfs:label "PositivArrivalConfirmation"^^xsd:string ;
+    rdfs:comment """reset ArrivalTimeout
+reset CallerId
+set Meldestelle in DigitalBelegblatt"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-PositiveDeletePosition> a sm:Action ;
+    rdfs:label "PositiveDeletePosition"^^xsd:string ;
+    rdfs:comment """reset FreeRouteTimeout
+reset meldestelle_from and meldestelle_to"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-PositiveFreeRouteResponse> a sm:Action ;
+    rdfs:label "PositiveFreeRouteResponse"^^xsd:string ;
+    rdfs:comment """reset FreeRouteTimeout
+reset meldestelle_from and meldestelle_to"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-PositiveSetPosition> a sm:Action ;
+    rdfs:label "PositiveSetPosition"^^xsd:string ;
+    rdfs:comment """reset SetRouteTimeout
+set first arrival false"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-PositiveSetRouteResponse> a sm:Action ;
+    rdfs:label "PositiveSetRouteResponse"^^xsd:string ;
+    rdfs:comment """reset SetRouteTimeout
+send DrivingPermission
+set DrivingPermissionTimeout"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-Registration> a sm:Action ;
+    rdfs:label "Registration"^^xsd:string ;
+    rdfs:comment """Send RegistrationConfirmation message
+Set train number"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-SetPosition> a sm:Action ;
+    rdfs:label "SetPosition"^^xsd:string ;
+    rdfs:comment """set SetRouteTimeout
+send SetRoute"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-SetPositionTimeout> a sm:Action ;
+    rdfs:label "SetPositionTimeout"^^xsd:string ;
+    rdfs:comment """reset SetRouteTimeout
+Send System Fehler"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-SetRoute> a sm:Action ;
+    rdfs:label "SetRoute"^^xsd:string ;
+    rdfs:comment """send SetRouteRequest
+set SetRoute Timeout
+set meldestelle_from and meldestelle_to
+set CallerId"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Action-WrongDrivingPermissionReplay> a sm:Action ;
+    rdfs:label "WrongDrivingPermissionReplay"^^xsd:string ;
+    rdfs:comment """reset DrivingPermissionTimeout
+Send NegativConfirmation
+reset CallerId
+send free route
+set free route timeout"""^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Array-Array> a tel:Array .
+
+<https://frittenburger.de/2022/11/EULYNX#Bytes-Bytes> a tel:Bytes .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-ObjectController> a sys:Component ;
+    rdfs:label "ObjectController"^^xsd:string ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Übernimmt-die-Kommunikation-zu-den-Feldelementen.> .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-TF-Tablet> a sys:Component ;
+    rdfs:label "TF-Tablet"^^xsd:string ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Übernimmt-die-Visualisierung-des-Digitalen-Belegblatts.> .
+
+<https://frittenburger.de/2022/11/EULYNX#Event-ArrivalMessage> a sm:Event ;
+    rdfs:label "ArrivalMessage"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Event-Deregister> a sm:Event ;
+    rdfs:label "Deregister"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Event-DrivingRequestMessage> a sm:Event ;
+    rdfs:label "DrivingRequestMessage"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Event-NegativeConfirmationMessage> a sm:Event ;
+    rdfs:label "NegativeConfirmationMessage"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Event-PositiveConfirmationMessage> a sm:Event ;
+    rdfs:label "PositiveConfirmationMessage"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Event-RegistrationMessage> a sm:Event ;
+    rdfs:label "RegistrationMessage"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-ArrivalTimeout> a sm:Guard ;
+    rdfs:label "ArrivalTimeout"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-CorrectDrivingPermission> a sm:Guard ;
+    rdfs:label "CorrectDrivingPermission"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-DrivingPermissionTimeout> a sm:Guard ;
+    rdfs:label "DrivingPermissionTimeout"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-FirstArrival> a sm:Guard ;
+    rdfs:label "FirstArrival"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-LastArrival> a sm:Guard ;
+    rdfs:label "LastArrival"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-ValidArrivalMessage> a sm:Guard ;
+    rdfs:label "ValidArrivalMessage"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-ValidDrivingRequest> a sm:Guard ;
+    rdfs:label "ValidDrivingRequest"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-ValidRoute> a sm:Guard ;
+    rdfs:label "ValidRoute"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-WrongDrivingPermission> a sm:Guard ;
+    rdfs:label "WrongDrivingPermission"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#InitialState-Init> a sm:InitialState ;
+    rdfs:label "Init"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Point-Point-02cf7ef1-e950-4217-918c-58f6a157581a> a fldg:Point ;
+    rdfs:label "Weiche 3"^^xsd:string ;
+    fldg:identifier "02cf7ef1-e950-4217-918c-58f6a157581a"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Point-Point-0c60cd17-9815-4c03-90eb-ecbe71e01c9c> a fldg:Point ;
+    rdfs:label "Weiche 1"^^xsd:string ;
+    fldg:identifier "0c60cd17-9815-4c03-90eb-ecbe71e01c9c"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Point-Point-31f2be84-65ee-4193-9e42-b24f9b3ce5b5> a fldg:Point ;
+    rdfs:label "Weiche 2"^^xsd:string ;
+    fldg:identifier "31f2be84-65ee-4193-9e42-b24f9b3ce5b5"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Point-Point-46635504-f6c6-4d24-928e-712118023d7e> a fldg:Point ;
+    rdfs:label "Weiche 4"^^xsd:string ;
+    fldg:identifier "46635504-f6c6-4d24-928e-712118023d7e"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Point-Point-caba7108-af52-4f4f-aeae-8d52a378a853> a fldg:Point ;
+    rdfs:label "Weiche 5"^^xsd:string ;
+    fldg:identifier "caba7108-af52-4f4f-aeae-8d52a378a853"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Point-Point-d25723aa-aa04-4376-a837-c8c091ae8ebf> a fldg:Point ;
+    rdfs:label "Weiche 0"^^xsd:string ;
+    fldg:identifier "d25723aa-aa04-4376-a837-c8c091ae8ebf"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E1> a fldg:SignalNe1 ;
+    rdfs:label "Trapeztafel E1"^^xsd:string ;
+    fldg:identifier "60E1"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E2> a fldg:SignalNe1 ;
+    rdfs:label "Trapeztafel E2"^^xsd:string ;
+    fldg:identifier "60E2"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E3> a fldg:SignalNe1 ;
+    rdfs:label "Trapeztafel E3"^^xsd:string ;
+    fldg:identifier "60E3"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe1-SignalNe1-60E4> a fldg:SignalNe1 ;
+    rdfs:label "Trapeztafel E4"^^xsd:string ;
+    fldg:identifier "60E4"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A1> a fldg:SignalNe5 ;
+    rdfs:label "Haltetafel A1"^^xsd:string ;
+    fldg:identifier "60A1"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A1b> a fldg:SignalNe5 ;
+    rdfs:label "Haltetafel A1b"^^xsd:string ;
+    fldg:identifier "60A1b"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A2> a fldg:SignalNe5 ;
+    rdfs:label "Haltetafel A2"^^xsd:string ;
+    fldg:identifier "60A2"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60A2b> a fldg:SignalNe5 ;
+    rdfs:label "Haltetafel A2b"^^xsd:string ;
+    fldg:identifier "60A2b"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B1> a fldg:SignalNe5 ;
+    rdfs:label "Haltetafel B1"^^xsd:string ;
+    fldg:identifier "60B1"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B1b> a fldg:SignalNe5 ;
+    rdfs:label "Haltetafel B1b"^^xsd:string ;
+    fldg:identifier "60B1b"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B2> a fldg:SignalNe5 ;
+    rdfs:label "Haltetafel B2"^^xsd:string ;
+    fldg:identifier "60B2"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60B2b> a fldg:SignalNe5 ;
+    rdfs:label "Haltetafel B2b"^^xsd:string ;
+    fldg:identifier "60B2b"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60WE1> a fldg:SignalNe5 ;
+    rdfs:label "Weichenende WE1"^^xsd:string ;
+    fldg:identifier "60WE1"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SignalNe5-SignalNe5-60WE2> a fldg:SignalNe5 ;
+    rdfs:label "Weichenende WE2"^^xsd:string ;
+    fldg:identifier "60WE2"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#State-Deregistered> a sm:State ;
+    rdfs:label "Deregistered"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-Audio> a tel:Structure ;
+    rdfs:label "Audio"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-Audio-audio>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-Audio-caller_id> ;
+    tel:structureName "Audio"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-Command> a tel:Structure ;
+    rdfs:label "Command"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-Command-caller_id>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-Command-command_type>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-Command-text> ;
+    tel:structureName "Command"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Structure-Route> a tel:Structure ;
+    rdfs:label "Route"^^xsd:string ;
+    tel:hasDataField <https://frittenburger.de/2022/11/EULYNX#DataField-Route-meldestelle_from>,
+        <https://frittenburger.de/2022/11/EULYNX#DataField-Route-meldestelle_to> ;
+    tel:structureName "Route"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-SpeechToText> a sys:Component ;
+    rdfs:label "SpeechToText"^^xsd:string ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Konvertiert-WAV-Dateien-in-Text.> .
+
+<https://frittenburger.de/2022/11/EULYNX#Event-DrivingPermissionReplayMessage> a sm:Event ;
+    rdfs:label "DrivingPermissionReplayMessage"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-FreeRouteTimeout> a sm:Guard ;
+    rdfs:label "FreeRouteTimeout"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-NegativeFreeRouteResponse> a sm:Guard ;
+    rdfs:label "NegativeFreeRouteResponse"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-NegativeSetRouteResponse> a sm:Guard ;
+    rdfs:label "NegativeSetRouteResponse"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-PositiveFreeRouteResponse> a sm:Guard ;
+    rdfs:label "PositiveFreeRouteResponse"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-PositiveSetRouteResponse> a sm:Guard ;
+    rdfs:label "PositiveSetRouteResponse"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Guard-SetRouteTimeout> a sm:Guard ;
+    rdfs:label "SetRouteTimeout"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-Nothalt> a sys:Component ;
+    rdfs:label "Nothalt"^^xsd:string ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Gibt-einen-Nothaltauftrag-ab.> .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-TF-Funkgerät> a sys:Component ;
+    rdfs:label "TF-Funkgerät"^^xsd:string ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Erlaubt-die-Kommunikation-mit-dem-Zugleiter-in-the-Cloud.> .
+
+<https://frittenburger.de/2022/11/EULYNX#Station-Station-C-Dorf> a fldg:Station ;
+    rdfs:label "Station C-Dorf"^^xsd:string ;
+    fldg:stationName "C-Dorf"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Station-Station-S-Berg> a fldg:Station ;
+    rdfs:label "Station S-Berg"^^xsd:string ;
+    fldg:stationName "S-Berg"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-RadioIO> a sys:Component ;
+    rdfs:label "RadioIO"^^xsd:string ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Konvertiert-die-Kommunikation-zwischen-Funkgerät-und-ZLic-API> .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-ZLIC-Funkgerät> a sys:Component ;
+    rdfs:label "ZLIC-Funkgerät"^^xsd:string ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Erlaubt-die-Kommunikation-mit-dem-TF.> .
+
+<https://frittenburger.de/2022/11/EULYNX#Event-FreeRouteResponseMessage> a sm:Event ;
+    rdfs:label "FreeRouteResponseMessage"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Event-SetRouteResponseMessage> a sm:Event ;
+    rdfs:label "SetRouteResponseMessage"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#State-Arrival> a sm:State ;
+    rdfs:label "Arrival"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#State-DrivingPermission> a sm:State ;
+    rdfs:label "DrivingPermission"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#State-DrivingRequest> a sm:State ;
+    rdfs:label "DrivingRequest"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#State-Error> a sm:State ;
+    rdfs:label "Error"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#State-SetPosition> a sm:State ;
+    rdfs:label "SetPosition"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-SIP-Server> a sys:Component ;
+    rdfs:label "SIP Server"^^xsd:string ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Stellt-einen-Websocket-für-den-Austausch-von-Wav-Dateien-zur-Verfügung.> .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-TextToSpeech> a sys:Component ;
+    rdfs:label "TextToSpeech"^^xsd:string ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Konvertiert-Text-in-WAV-Dateien.> .
+
+<https://frittenburger.de/2022/11/EULYNX#State-DeletePosition> a sm:State ;
+    rdfs:label "DeletePosition"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#State-InMovement> a sm:State ;
+    rdfs:label "InMovement"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-Stellprozess> a sys:Component ;
+    rdfs:label "Stellprozess"^^xsd:string ;
+    fldg:hasDataModel <https://frittenburger.de/2022/11/EULYNX#PlanProModel-lausitz-PlanProModel> ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Prüfung-und-Reservierung-der-Strecke.> .
+
+<https://frittenburger.de/2022/11/EULYNX#State-FreeRoute> a sm:State ;
+    rdfs:label "FreeRoute"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-NaturalLanguageUnderstanding> a sys:Component ;
+    rdfs:label "NaturalLanguageUnderstanding"^^xsd:string ;
+    fldg:hasDataModel <https://frittenburger.de/2022/11/EULYNX#StationModel-lausitz-Station-Model> ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Erkennt-Absichten-(intends)-im-Text.> .
+
+<https://frittenburger.de/2022/11/EULYNX#Event-Timer> a sm:Event ;
+    rdfs:label "Timer"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Integer-Integer> a tel:Integer .
+
+<https://frittenburger.de/2022/11/EULYNX#State-ConfirmedPosition> a sm:State ;
+    rdfs:label "ConfirmedPosition"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-Digitales-Belegblatt> a sys:Component ;
+    rdfs:label "Digitales Belegblatt"^^xsd:string ;
+    fldg:hasDataModel <https://frittenburger.de/2022/11/EULYNX#TrackModel-lausitz-Track-Model>,
+        <https://frittenburger.de/2022/11/EULYNX#VoiceProtocolOptionsModel-Voice-Protocol-Options-Model> ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Visualisiert-die-Belegung-der-Strecke.> ;
+    sys:isImplementedBy <https://frittenburger.de/2022/11/EULYNX#StateMachine-Train-Supervision> .
+
+<https://frittenburger.de/2022/11/EULYNX#Component-Tracing> a sys:Component ;
+    rdfs:label "Tracing"^^xsd:string ;
+    sys:hasFunction <https://frittenburger.de/2022/11/EULYNX#Function-Loggt-den-Nachrichtenverkehr-innerhalb-des-ZLiC> .
+
+<https://frittenburger.de/2022/11/EULYNX#String-String> a tel:String .
+

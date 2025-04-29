@@ -1,0 +1,89 @@
+.expense-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.expense-item h5 {
+    flex-shrink: 1; /* Verhindert, dass der Text zu viel Platz wegnimmt */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.expense-item .d-flex > div {
+    flex-shrink: 0; /* Buttons sollen nicht schrumpfen */
+}
+
+.btn-group .dropdown-item {
+    cursor: pointer; /* Setzt den Mauszeiger auf den Hand-Symbol (Finger) */
+}
+
+
+/* Gemeinsame Styles für alle Buttons */
+.toggle-btn {
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Aktiver Zustand für alle Buttons */
+.toggle-btn.active {
+    color: white;
+}
+
+/* Category Button - btn-primary */
+.category.active {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.category.inactive {
+    background-color: transparent;
+    color: #007bff;
+    border-color: #007bff;
+}
+
+/* Person Button - btn-success */
+.person.active {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.person.inactive {
+    background-color: transparent;
+    color: #28a745;
+    border-color: #28a745;
+}
+
+/* Tag Button - btn-info */
+.tag.active {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+.tag.inactive {
+    background-color: transparent;
+    color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+/* Location Button - btn-warning */
+.location.active {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.location.inactive {
+    background-color: transparent;
+    color: #ffc107;
+    border-color: #ffc107;
+}
+
+/* Vacation Button - btn-danger */
+.vacation.active {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.vacation.inactive {
+    background-color: transparent;
+    color: #dc3545;
+    border-color: #dc3545;
+}

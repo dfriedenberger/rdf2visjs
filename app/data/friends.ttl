@@ -1,0 +1,29 @@
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Personen
+ex:alice a foaf:Person ;
+    foaf:name "Alice" ;
+    schema:birthPlace ex:berlin ;
+    foaf:knows ex:bob, ex:carol .
+
+ex:bob a foaf:Person ;
+    foaf:name "Bob" ;
+    schema:birthPlace ex:hamburg ;
+    foaf:knows ex:alice .
+
+ex:carol a foaf:Person ;
+    foaf:name "Carol" ;
+    schema:birthPlace ex:berlin ;
+    foaf:knows ex:alice .
+
+# Orte
+ex:berlin a schema:Place ;
+    schema:name "Berlin" ;
+    schema:address "Berlin, Deutschland" .
+
+ex:hamburg a schema:Place ;
+    schema:name "Hamburg" ;
+    schema:address "Hamburg, Deutschland" .
