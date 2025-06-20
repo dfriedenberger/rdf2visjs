@@ -27,11 +27,20 @@ function createNetwork(graph) {
           to: { enabled: true, scaleFactor: 0.6 }
         },
         font: {
+          size: 10,        // kleinere Schrift für Edges
           align: 'middle'
         }
       },
       physics: {
-        enabled: true
+        enabled: true,
+        solver: 'forceAtlas2Based',
+        forceAtlas2Based: {
+          springLength: 150, // Längere Feder für größere Abstände
+          springConstant: 0.01, // Geringere Federkonstante für san
+        },
+        stabilization: {
+          iterations: 200
+        }
       }
     };
 

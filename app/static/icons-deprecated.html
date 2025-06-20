@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    #network {
+      width: 100%;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+<body>
+  <div id="network"></div>
+  <script>
+
+    const nodes = new vis.DataSet([
+        {
+            id: 1,
+            label: "Person",
+            shape: "icon",
+            icon: {
+            face: 'FontAwesome',
+            code: '\uf007', // Unicode für FontAwesome "user"
+            size: 50,
+            color: '#2B7CE9'
+            }
+        },
+        {
+            id: 2,
+            label: "Buch",
+            shape: "icon",
+            icon: {
+            face: 'FontAwesome',
+            code: '\uf02d', // book icon
+            size: 50,
+            color: '#FFA500'
+            }
+        },
+        {
+            id: 3,
+            label: "Server",
+            shape: "image",
+            image: "https://cdn-icons-png.flaticon.com/512/1792/1792868.png"
+        }
+    ]);
+
+    const edges = new vis.DataSet([
+        { from: 1, to: 2, label: "liest" },
+        { from: 1, to: 3, label: "verwendet" }
+    ]);
+
+    const container = document.getElementById('network');
+    const data = { nodes: nodes, edges: edges };
+    const options = {
+    nodes: {
+        font: {
+        multi: 'html',
+        }
+    },
+    edges: {
+        arrows: 'to'
+    },
+    physics: {
+        enabled: true
+    }
+    };
+
+    const network = new vis.Network(container, data, options);
+
+
+    </script>
+</body>
+</html>

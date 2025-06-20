@@ -3,15 +3,14 @@ from rdflib import Graph
 from .sparql_wrapper import SparQLWrapper
 
 
-def gen_graph():
+def gen_graph(filename, mapping_file):
 
     # RDF-Graph erzeugen
     g = Graph()
 
     # Datei im Turtle-Format einlesen
 
-    # g.parse("data/friends.ttl", format="turtle")
-    g.parse("data/flexidug.ttl", format="turtle")
+    g.parse(filename, format="turtle")
 
     # Anzahl der Tripel anzeigen
     print(f"Graph hat {len(g)} Tripel.\n")
@@ -20,32 +19,43 @@ def gen_graph():
     nodes_id = dict()
     node_id = 0
 
-    # SVG Icons (können URLs zu externen SVG-Dateien sein)
-    person_icon = "icons/person-svgrepo-com.svg"
-    book_icon = "icons/book-svgrepo-com.svg"
-    server_icon = "icons/server-svgrepo-com.svg"
-    city_icon = "icons/city-svgrepo-com.svg"
-    node_icon = "icons/node-svgrepo-com.svg"
+    icon_mapping = dict()
+    with open(mapping_file, "r", encoding="utf-8") as f:
+        for line in f.readlines():
+            line = line.strip()
+            if line == "" or line.startswith("#"):
+                continue
+            # Mapping-Definitionen einlesen
+            p = line.split(r' ')
+            if len(p) != 2:
+                print(f"Fehlerhafte Mapping-Definition: {line} => {p}")
+                continue
+            # Mapping-Definitionen speichern
+            icon_mapping[p[0]] = p[1]
 
     instance_types = set()
     sparql_wrapper = SparQLWrapper(g)
     for inst in sparql_wrapper.get_instances():
 
-        icon = node_icon
+        icon = "icons/node-svgrepo-com.svg"
         # Instanztyp abfragen
-        inst_type = sparql_wrapper.get_type(inst)
+        inst_type = str(sparql_wrapper.get_type(inst))
         instance_types.add(inst_type)
-        print(inst, "type:", inst_type)
-        if inst_type.endswith("Person"):
-            icon = person_icon
-        elif inst_type.endswith("Place"):
-            icon = city_icon
+        print(inst, "type:", inst_type, icon_mapping)
+        if inst_type in icon_mapping:
+            icon = icon_mapping[inst_type]
 
         label = str(inst)
         for prop, obj in sparql_wrapper.get_object_properties(inst):
             print(inst, "property:", prop, "object:", obj)
             if prop.endswith("name") or prop.endswith("label"):
                 label = str(obj)
+
+        if "{{label}}" in icon:
+            # Platzhalter im Icon ersetzen und Label löschen
+            print("Replacing label in icon:", icon)
+            icon = icon.replace("{{label}}", label)
+            label = ""
 
         node_id += 1
         nodes_id[inst] = node_id

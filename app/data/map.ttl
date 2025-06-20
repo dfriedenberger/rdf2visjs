@@ -1,0 +1,58 @@
+@prefix gap: <http://frittenburger.de/ontoloie/gap#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://frittenburger.de/2022/11/EULYNX#Process-Design-Prozess> a gap:Process ;
+    rdfs:label "Design Prozess"^^xsd:string ;
+    gap:hasInput <https://frittenburger.de/2022/11/EULYNX#Artifact-System-Specification> ;
+    gap:hasOutput <https://frittenburger.de/2022/11/EULYNX#Artifact-Product-or-Prototype> .
+
+<https://frittenburger.de/2022/11/EULYNX#Process-Formalizing> a gap:Process ;
+    rdfs:label "Formalizing"^^xsd:string ;
+    gap:hasInput <https://frittenburger.de/2022/11/EULYNX#Artifact-System-Specification> ;
+    gap:hasOutput <https://frittenburger.de/2022/11/EULYNX#Artifact-Properties> .
+
+<https://frittenburger.de/2022/11/EULYNX#Process-Model-checking> a gap:Process ;
+    rdfs:label "Model checking"^^xsd:string ;
+    gap:hasInput <https://frittenburger.de/2022/11/EULYNX#Artifact-Properties>,
+        <https://frittenburger.de/2022/11/EULYNX#Artifact-System-Model> .
+
+<https://frittenburger.de/2022/11/EULYNX#Process-Modeling> a gap:Process ;
+    rdfs:label "Modeling"^^xsd:string ;
+    gap:hasInput <https://frittenburger.de/2022/11/EULYNX#Artifact-Product-or-Prototype> ;
+    gap:hasOutput <https://frittenburger.de/2022/11/EULYNX#Artifact-Model-checking-Report>,
+        <https://frittenburger.de/2022/11/EULYNX#Artifact-System-Model> .
+
+<https://frittenburger.de/2022/11/EULYNX#Process-Simulation> a gap:Process ;
+    rdfs:label "Simulation"^^xsd:string ;
+    gap:hasInput <https://frittenburger.de/2022/11/EULYNX#Artifact-Model-checking-Report>,
+        <https://frittenburger.de/2022/11/EULYNX#Artifact-System-Model> ;
+    gap:hasOutput <https://frittenburger.de/2022/11/EULYNX#Artifact-Simulation-Report> .
+
+<https://frittenburger.de/2022/11/EULYNX#Process-Verification> a gap:Process ;
+    rdfs:label "Verification"^^xsd:string ;
+    gap:hasInput <https://frittenburger.de/2022/11/EULYNX#Artifact-Product-or-Prototype>,
+        <https://frittenburger.de/2022/11/EULYNX#Artifact-Properties> ;
+    gap:hasOutput <https://frittenburger.de/2022/11/EULYNX#Artifact-Verification-Report> .
+
+<https://frittenburger.de/2022/11/EULYNX#Artifact-Simulation-Report> a gap:Artifact ;
+    rdfs:label "Simulation Report"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Artifact-Verification-Report> a gap:Artifact ;
+    rdfs:label "Verification Report"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Artifact-Model-checking-Report> a gap:Artifact ;
+    rdfs:label "Model checking Report"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Artifact-System-Specification> a gap:Artifact ;
+    rdfs:label "System Specification"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Artifact-Product-or-Prototype> a gap:Artifact ;
+    rdfs:label "Product or Prototype"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Artifact-Properties> a gap:Artifact ;
+    rdfs:label "Properties"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Artifact-System-Model> a gap:Artifact ;
+    rdfs:label "System Model"^^xsd:string .
+
