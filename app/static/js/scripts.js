@@ -57,15 +57,51 @@ function createNetwork(graph) {
     });
 
 
+    network.on("click", function (params) {
+      if (params.nodes.length > 0) {
+        const nodeId = params.nodes[0];
+        const nodeData = nodes.get(nodeId);
+        const pointer = params.pointer.DOM;
+      
+        console.log('Popup anzeigen', nodeId, nodeData);
+
+        // Popup anzeigen
+        $('#popup')
+          .html(`<strong>Class:</strong> ${nodeData.user_data.type}<br>${nodeData.user_data.comment}`)
+          .css({
+            left: pointer.x + 'px',
+            top: pointer.y + 'px',
+            display: 'block'
+          });
+
+      } else {
+        console.log('Popup ausblenden');
+
+        $('#popup').hide(); // Kein Knoten angeklickt
+      }
+    });
+
+
 }
 
-$(document).ready(function() {
+function init() {
+    $(document).on('click', function (e) {
+      // Wenn Klick außerhalb von Popup UND außerhalb des Netzwerks
+      if (
+        !$(e.target).closest('#popup').length &&
+        !$(e.target).closest('#network').length
+      ) {
+        $('#popup').hide();
+      }
+  });
+}
 
+function loadGraph(projectId) {
 
-
+    init();
 
     // API Call mit getJSON
-    $.getJSON('/graph/', function(data) {
+    $.getJSON('/graph/'+projectId, function(data) {
         console.log(data);
         // Netzwerk aufbauen
         createNetwork(data);
@@ -73,5 +109,10 @@ $(document).ready(function() {
     }).fail(function(jqxhr, textStatus, error) {
         console.log("Error: " + textStatus + ", " + error);
     });
-});
+
+}
+
+
+
+
    

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+</head>
+<body>
+    <h1>
+        <a href="/" style="text-decoration: none;" title="Zur Startseite">
+            <img src="/favicon.png" alt="Symbol" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;"">
+        </a>
+        Projektübersicht
+    </h1>
+
+    <ul>
+        {% for project in projects %}
+            <li>
+                <strong>{{ project.name }}</strong><br>
+                ID: {{ project.id }}<br>
+                Modell: {{ project.model }}<br>
+                Mapping: {{ project.mapping }}<br>
+                <a href="/project/{{ project.id }}">Graph anzeigen</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>

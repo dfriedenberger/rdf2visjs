@@ -37,19 +37,26 @@ def gen_graph(filename, mapping_file):
     sparql_wrapper = SparQLWrapper(g)
     for inst in sparql_wrapper.get_instances():
 
-        icon = "icons/node-svgrepo-com.svg"
+        icon = "/icons/node-svgrepo-com.svg"
+        user_data = {
+            "type": "None",
+            "comment": "...",
+        }
         # Instanztyp abfragen
         inst_type = str(sparql_wrapper.get_type(inst))
         instance_types.add(inst_type)
         print(inst, "type:", inst_type, icon_mapping)
         if inst_type in icon_mapping:
             icon = icon_mapping[inst_type]
+        user_data["type"] = inst_type.split("#")[-1]  # Nur den letzten Teil des Typs verwenden
 
         label = str(inst)
         for prop, obj in sparql_wrapper.get_object_properties(inst):
             print(inst, "property:", prop, "object:", obj)
             if prop.endswith("name") or prop.endswith("label"):
                 label = str(obj)
+            if prop.endswith("comment"):
+                user_data["comment"] = str(obj)
 
         if "{{label}}" in icon:
             # Platzhalter im Icon ersetzen und Label löschen
@@ -59,7 +66,7 @@ def gen_graph(filename, mapping_file):
 
         node_id += 1
         nodes_id[inst] = node_id
-        nodes.append({"id": node_id, "label": label, "shape": "image", "image": icon})
+        nodes.append({"id": node_id, "label": label, "shape": "image", "image": icon, "user_data": user_data})
 
     edges = []
     for from_ref, ref, to_ref in sparql_wrapper.get_references():
