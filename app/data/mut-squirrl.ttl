@@ -2,10 +2,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Flight> a mut:SysMLMicroModel ;
-    rdfs:label "Flight"^^xsd:string ;
+<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Aviation> a mut:SysMLMicroModel ;
+    rdfs:label "Aviation"^^xsd:string ;
     mut:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-c> ;
-    rdfs:comment "Flight System Model"^^xsd:string .
+    rdfs:comment "Aviation System Model"^^xsd:string .
 
 <https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Rail> a mut:SysMLMicroModel ;
     rdfs:label "Rail"^^xsd:string ;
@@ -30,7 +30,7 @@
 <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-c> a mut:PythonScriptTransformation ;
     rdfs:label "c"^^xsd:string ;
     mut:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-SQuIRRL> ;
-    rdfs:comment "Create Flight System Model"^^xsd:string .
+    rdfs:comment "Create Aviation System Model"^^xsd:string .
 
 <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-SQuIRRL> a mut:RDFMicroModel ;
     rdfs:label "SQuIRRL"^^xsd:string ;
