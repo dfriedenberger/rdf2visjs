@@ -1,10 +1,33 @@
 function createNetwork(graph) {
-    // Netzwerk-Container
 
+    // Template aus HTML holen und kompilieren
+    const popup_source = document.getElementById('popup-template').innerHTML;
+    const popup_template = Handlebars.compile(popup_source);
+
+
+    // Netzwerk-Container
     const nodes = new vis.DataSet(graph.nodes)
      
     // Kanten
     const edges = new vis.DataSet(graph.edges);
+
+
+    //Physics
+    const physics_base = {
+        enabled: true
+    };
+
+    const physics_forceAtlas2Based = {
+        enabled: true,
+        solver: 'forceAtlas2Based',
+        forceAtlas2Based: {
+          springLength: 150, // Längere Feder für größere Abstände
+          springConstant: 0.01, // Geringere Federkonstante für san
+        },
+        stabilization: {
+          iterations: 200
+        }
+    };
 
     // Konfiguration
     const container = document.getElementById('network');
@@ -31,17 +54,7 @@ function createNetwork(graph) {
           align: 'middle'
         }
       },
-      physics: {
-        enabled: true,
-        solver: 'forceAtlas2Based',
-        forceAtlas2Based: {
-          springLength: 150, // Längere Feder für größere Abstände
-          springConstant: 0.01, // Geringere Federkonstante für san
-        },
-        stabilization: {
-          iterations: 200
-        }
-      }
+      physics: physics_base
     };
 
     // Netzwerk erstellen
@@ -63,20 +76,25 @@ function createNetwork(graph) {
         const nodeData = nodes.get(nodeId);
         const pointer = params.pointer.DOM;
       
-        console.log('Popup anzeigen', nodeId, nodeData);
+
+        //Popup rendern
+        const html = popup_template(nodeData.user_data);
 
         // Popup anzeigen
         $('#popup')
-          .html(`<strong>Class:</strong> ${nodeData.user_data.type}<br>${nodeData.user_data.comment}`)
+          .html(html)
           .css({
             left: pointer.x + 'px',
             top: pointer.y + 'px',
             display: 'block'
-          });
+        });
+
+        // Toggle für Klassenhierarchie
+        $(document).on("click", ".toggle-class-hierarchy", function () {
+          $(this).next(".class-hierarchy").slideToggle(200);
+        });
 
       } else {
-        console.log('Popup ausblenden');
-
         $('#popup').hide(); // Kein Knoten angeklickt
       }
     });
@@ -94,6 +112,8 @@ function init() {
         $('#popup').hide();
       }
   });
+
+ 
 }
 
 function loadGraph(projectId) {

@@ -36,13 +36,19 @@ projects = [
         "id": "map",
         "name": "Map",
         "model": "data/map.ttl",
-        "mapping": "data/mapping.txt"
+        "mapping": "data/map-mapping.txt"
     },
     {
         "id": "flexidug",
         "name": "FlexiDug Model",
         "model": "data/flexidug.ttl",
         "mapping": "data/flexidug-mapping.txt"
+    },
+    {
+        "id": "sysml-squirrl",
+        "name": "SQuIRRL SysML Model",
+        "model": "data/sysml-squirrl.ttl",
+        "mapping": "data/sysml-mapping.txt"
     },
 ]
 

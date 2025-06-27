@@ -40,8 +40,10 @@ def gen_graph(filename, mapping_file):
         icon = "/icons/node-svgrepo-com.svg"
         user_data = {
             "type": "None",
-            "comment": "...",
+            "label": "-",
+           
         }
+        attributes = {}
         # Instanztyp abfragen
         inst_type = str(sparql_wrapper.get_type(inst))
         instance_types.add(inst_type)
@@ -53,10 +55,20 @@ def gen_graph(filename, mapping_file):
         label = str(inst)
         for prop, obj in sparql_wrapper.get_object_properties(inst):
             print(inst, "property:", prop, "object:", obj)
-            if prop.endswith("name") or prop.endswith("label"):
+            key = prop.split("#")[-1]  # Nur den letzten Teil des Properties verwenden
+            if key == "name" or key == "label":
                 label = str(obj)
-            if prop.endswith("comment"):
+            elif key == "comment":
                 user_data["comment"] = str(obj)
+            elif key == "type":
+                # ignore type property
+                continue
+            else:
+                attributes[key] = str(obj)
+
+        if attributes:
+            user_data["attributes"] = attributes
+        user_data["label"] = label
 
         if "{{label}}" in icon:
             # Platzhalter im Icon ersetzen und Label löschen

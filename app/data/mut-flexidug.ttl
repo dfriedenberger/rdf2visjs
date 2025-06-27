@@ -2,6 +2,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://frittenburger.de/2022/11/EULYNX#BinaryMicroModel-Yaramo> a mut:BinaryMicroModel ;
+    rdfs:label "Yaramo"^^xsd:string ;
+    mut:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-c> ;
+    rdfs:comment "Infrastuktur as Yaramo Model"^^xsd:string .
+
 <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-a> a mut:PythonScriptTransformation ;
     rdfs:label "a"^^xsd:string ;
     mut:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-PIM-System-Definition> ;
@@ -12,11 +17,6 @@
     mut:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-State-Machines> ;
     rdfs:comment "Create State Machines"^^xsd:string .
 
-<https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-c> a mut:PythonScriptTransformation ;
-    rdfs:label "c"^^xsd:string ;
-    mut:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-Data-Model-Definition> ;
-    rdfs:comment "Create Data Model Definition"^^xsd:string .
-
 <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-f> a mut:PythonScriptTransformation ;
     rdfs:label "f"^^xsd:string ;
     mut:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-Configuration-Definition> ;
@@ -26,15 +26,20 @@
     rdfs:label "Artifacts"^^xsd:string ;
     rdfs:comment "Source Code, Documentation, Docker, Kubernetes, GitLab, ..."^^xsd:string .
 
+<https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-c> a mut:PythonScriptTransformation ;
+    rdfs:label "c"^^xsd:string ;
+    mut:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-Data-Model-Definition> ;
+    rdfs:comment "Create Data Model Definition"^^xsd:string .
+
 <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-d> a mut:PythonScriptTransformation ;
     rdfs:label "d"^^xsd:string ;
-    mut:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-Fault-Tree-Analysis-Definition> ;
-    rdfs:comment "Create Fault Tree Analysis Definition"^^xsd:string .
+    mut:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-FTA-Definition> ;
+    rdfs:comment "Create FTA Definition"^^xsd:string .
 
 <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-e> a mut:PythonScriptTransformation ;
     rdfs:label "e"^^xsd:string ;
-    mut:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-PSM-System-Definition> ;
-    rdfs:comment "Create PSM System Definition"^^xsd:string .
+    mut:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-PSM-Model> ;
+    rdfs:comment "Create PSM Model"^^xsd:string .
 
 <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-g> a mut:PythonScriptTransformation ;
     rdfs:label "g"^^xsd:string ;
@@ -51,16 +56,18 @@
     mut:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#BinaryMicroModel-Artifacts> ;
     rdfs:comment "Generate Artifacts"^^xsd:string .
 
-<https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-Fault-Tree-Analysis-Definition> a mut:RDFMicroModel ;
-    rdfs:label "Fault Tree Analysis Definition"^^xsd:string .
+<https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-FTA-Definition> a mut:RDFMicroModel ;
+    rdfs:label "FTA Definition"^^xsd:string ;
+    rdfs:comment "Definition for Fault Tree Analysis"^^xsd:string .
 
-<https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-PSM-System-Definition> a mut:RDFMicroModel ;
-    rdfs:label "PSM System Definition"^^xsd:string ;
+<https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-PSM-Model> a mut:RDFMicroModel ;
+    rdfs:label "PSM Model"^^xsd:string ;
     mut:extendsModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-PIM-System-Definition> ;
     mut:hasLooseCoupling <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-Configuration-Definition> ;
     mut:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-g>,
         <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-h>,
-        <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-j> .
+        <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-j> ;
+    rdfs:comment "Transformed platform specific model for system"^^xsd:string .
 
 <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-h> a mut:PythonScriptTransformation ;
     rdfs:label "h"^^xsd:string ;
@@ -74,22 +81,26 @@
 
 <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-Configuration-Definition> a mut:RDFMicroModel ;
     rdfs:label "Configuration Definition"^^xsd:string ;
-    mut:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-j> .
+    mut:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-j> ;
+    rdfs:comment "Configuration for the system"^^xsd:string .
 
 <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-Data-Model-Definition> a mut:RDFMicroModel ;
     rdfs:label "Data Model Definition"^^xsd:string ;
-    mut:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-i> .
+    mut:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-i> ;
+    rdfs:comment "Definition for data model"^^xsd:string .
 
 <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-PIM-System-Definition> a mut:RDFMicroModel ;
     rdfs:label "PIM System Definition"^^xsd:string ;
     mut:hasLooseCoupling <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-Data-Model-Definition>,
         <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-State-Machines> ;
     mut:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-d>,
-        <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-e> .
+        <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-e> ;
+    rdfs:comment "Definition of platform independent model for system"^^xsd:string .
 
 <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-State-Machines> a mut:RDFMicroModel ;
     rdfs:label "State Machines"^^xsd:string ;
-    mut:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-h> .
+    mut:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-h> ;
+    rdfs:comment "Definition of state machines"^^xsd:string .
 
 <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-Assets> a mut:RDFMicroModel ;
     rdfs:label "Assets"^^xsd:string ;

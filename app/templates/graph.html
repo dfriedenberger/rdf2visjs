@@ -21,6 +21,8 @@
 
   <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
   <script src="/js/scripts.js"></script>
 
   <script>
@@ -29,5 +31,43 @@
   });
   </script>
   
+  {% raw %}
+  <script id="popup-template" type="text/x-handlebars-template">
+    <div class="popup-container">
+      
+      <!-- TYP (kleiner Text oben) -->
+      <div class="popup-type">{{type}}</div>
+
+      <!-- HEADER mit Klasse -->
+      <div class="popup-header">
+        <strong class="class-name">{{label}}</strong>
+      </div>
+
+      <!-- BODY mit Kommentar und Attributtabelle -->
+      <div class="popup-body">
+        {{#if comment}}
+        <p>{{comment}}</p>
+        {{/if}}
+        {{#if attributes}}
+        <table class="popup-attributes">
+          <thead>
+            <tr><th>Attribut</th><th>Wert</th></tr>
+          </thead>
+          <tbody>
+            {{#each attributes}}
+            <tr>
+              <td>{{@key}}</td>
+              <td>{{this}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{/if}}
+      </div>
+    </div>
+  </script>
+
+  {% endraw %}
+   
 </body>
 </html>
