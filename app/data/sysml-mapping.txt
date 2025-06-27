@@ -1,2 +1,3 @@
 http://frittenburger.de/ontology/sysml#Actor /icons/person-svgrepo-com.svg
 http://frittenburger.de/ontology/sysml#UseCase /svg/usecase.svg?PLATZHALTER={{label}}
+http://frittenburger.de/ontology/sysml#Requirement /icons/requeriments-svgrepo-com.svg

@@ -2,52 +2,42 @@
 @prefix sysml: <http://frittenburger.de/ontology/sysml#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://frittenburger.de/2022/11/EULYNX#Actor-_SQXu8Ny9Ee-tCJf9duOHZg> a sysml:Actor ;
-    rdfs:label "Mobiles Gerät (TF)"^^xsd:string .
+<https://frittenburger.de/2022/11/EULYNX#Requirement-_BtFR0PhTEe--tr9esY6CWw> a sysml:Requirement ;
+    rdfs:label "Functional Requirements"^^xsd:string ;
+    sysml:nestedRequirement <https://frittenburger.de/2022/11/EULYNX#Requirement-_ECZG4PhUEe--tr9esY6CWw>,
+        <https://frittenburger.de/2022/11/EULYNX#Requirement-_RAU84PkYEe-8FYNDIgvuOA>,
+        <https://frittenburger.de/2022/11/EULYNX#Requirement-_v2uUMPkWEe-8FYNDIgvuOA> ;
+    sysml:requirementId "REQ-1"^^xsd:string ;
+    sysml:requirementText "Below this requirement, all functional requirements will be listed."^^xsd:string .
 
-<https://frittenburger.de/2022/11/EULYNX#Actor-_SQY9Edy9Ee-tCJf9duOHZg> a sysml:Actor ;
-    rdfs:label "Stationäres Gerät (FDL)"^^xsd:string .
+<https://frittenburger.de/2022/11/EULYNX#Requirement-_RbwKEPkXEe-8FYNDIgvuOA> a sysml:Requirement ;
+    rdfs:label "Non-Functional Requirements"^^xsd:string ;
+    sysml:nestedRequirement <https://frittenburger.de/2022/11/EULYNX#Requirement-_1R8xUPkXEe-8FYNDIgvuOA>,
+        <https://frittenburger.de/2022/11/EULYNX#Requirement-_Tw7cQPkYEe-8FYNDIgvuOA> ;
+    sysml:requirementId "REQ-2"^^xsd:string ;
+    sysml:requirementText "Below this requirement, all non-functional requirements will be listed."^^xsd:string .
 
-<https://frittenburger.de/2022/11/EULYNX#Actor-_SQZkIty9Ee-tCJf9duOHZg> a sysml:Actor ;
-    rdfs:label "Schlüsseltankstelle"^^xsd:string .
-
-<https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKQ9y8Ee-tCJf9duOHZg> a sysml:Actor ;
-    rdfs:label "Quantum Key Distribution (QKD)"^^xsd:string .
-
-<https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKQty8Ee-tCJf9duOHZg> a sysml:Actor ;
-    rdfs:label "Interlocking (IXL)"^^xsd:string .
-
-<https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKR9y8Ee-tCJf9duOHZg> a sysml:Actor ;
-    rdfs:label "Q-TLS"^^xsd:string .
-
-<https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKRdy8Ee-tCJf9duOHZg> a sysml:Actor ;
-    rdfs:label "ObjectController (OC)"^^xsd:string .
-
-<https://frittenburger.de/2022/11/EULYNX#UseCase-_15m7Y_N-Ee-mNtHHnvaBTw> a sysml:UseCase ;
-    rdfs:label "Schlüsselspeicher (FDL)"^^xsd:string ;
-    sysml:hasSubject <https://frittenburger.de/2022/11/EULYNX#Subject-_15m7YPN-Ee-mNtHHnvaBTw> .
-
-<https://frittenburger.de/2022/11/EULYNX#UseCase-_15m7YfN-Ee-mNtHHnvaBTw> a sysml:UseCase ;
-    rdfs:label "Schlüsselspeicher (FDL)"^^xsd:string ;
-    sysml:hasSubject <https://frittenburger.de/2022/11/EULYNX#Subject-_15m7YPN-Ee-mNtHHnvaBTw> .
-
-<https://frittenburger.de/2022/11/EULYNX#UseCase-_15m7YvN-Ee-mNtHHnvaBTw> a sysml:UseCase ;
-    rdfs:label "Schlüsselspeicher (FDL)"^^xsd:string ;
-    sysml:hasSubject <https://frittenburger.de/2022/11/EULYNX#Subject-_15m7YPN-Ee-mNtHHnvaBTw> .
+<https://frittenburger.de/2022/11/EULYNX#UseCase-> sysml:hasSubject <https://frittenburger.de/2022/11/EULYNX#Subject-_ZsWvgFOGEfCLQJobiW4gfg> .
 
 <https://frittenburger.de/2022/11/EULYNX#UseCase-_7ySfYOL-Ee-3O-g7VxExLg> a sysml:UseCase ;
-    rdfs:label "Schlüsselspeicher"^^xsd:string ;
+    rdfs:label "Schlüssel ablegen"^^xsd:string ;
+    sysml:association <https://frittenburger.de/2022/11/EULYNX#Actor-_SQZkIty9Ee-tCJf9duOHZg> ;
     sysml:hasSubject <https://frittenburger.de/2022/11/EULYNX#Subject-_YaD3cOMHEe-3O-g7VxExLg> .
 
 <https://frittenburger.de/2022/11/EULYNX#UseCase-_8Sy5UOLbEe-3O-g7VxExLg> a sysml:UseCase ;
-    rdfs:label "Schlüsselspeicher"^^xsd:string ;
+    rdfs:label "Schlüssel abrufen"^^xsd:string ;
+    sysml:association <https://frittenburger.de/2022/11/EULYNX#Actor-_SQXu8Ny9Ee-tCJf9duOHZg> ;
     sysml:hasSubject <https://frittenburger.de/2022/11/EULYNX#Subject-_YaD3cOMHEe-3O-g7VxExLg> .
 
 <https://frittenburger.de/2022/11/EULYNX#UseCase-_SQY9Ety9Ee-tCJf9duOHZg> a sysml:UseCase ;
-    rdfs:label "Exchange shared secret"^^xsd:string .
+    rdfs:label "Exchange shared secret"^^xsd:string ;
+    sysml:association <https://frittenburger.de/2022/11/EULYNX#Actor-_SQY9Edy9Ee-tCJf9duOHZg>,
+        <https://frittenburger.de/2022/11/EULYNX#Actor-_SQZkIty9Ee-tCJf9duOHZg> .
 
 <https://frittenburger.de/2022/11/EULYNX#UseCase-_SQZkINy9Ee-tCJf9duOHZg> a sysml:UseCase ;
-    rdfs:label "Sichere Kommunikation"^^xsd:string .
+    rdfs:label "Sichere Kommunikation"^^xsd:string ;
+    sysml:association <https://frittenburger.de/2022/11/EULYNX#Actor-_SQXu8Ny9Ee-tCJf9duOHZg>,
+        <https://frittenburger.de/2022/11/EULYNX#Actor-_SQY9Edy9Ee-tCJf9duOHZg> .
 
 <https://frittenburger.de/2022/11/EULYNX#UseCase-_VxOtsFKJEfCGt4EH7VyqHw> a sysml:UseCase ;
     rdfs:label "exchange data securely"^^xsd:string ;
@@ -61,14 +51,20 @@
         <https://frittenburger.de/2022/11/EULYNX#Actor-_m_JLMFKJEfCGt4EH7VyqHw> .
 
 <https://frittenburger.de/2022/11/EULYNX#UseCase-_fTLdoOMCEe-3O-g7VxExLg> a sysml:UseCase ;
-    rdfs:label "Schlüsselspeicher"^^xsd:string ;
+    rdfs:label "Schlüssel speichern"^^xsd:string ;
     sysml:hasSubject <https://frittenburger.de/2022/11/EULYNX#Subject-_YaD3cOMHEe-3O-g7VxExLg> .
 
 <https://frittenburger.de/2022/11/EULYNX#UseCase-_u6dKSNy8Ee-tCJf9duOHZg> a sysml:UseCase ;
-    rdfs:label "Sichere Kommunikation "^^xsd:string .
+    rdfs:label "Sichere Kommunikation "^^xsd:string ;
+    sysml:association <https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKQty8Ee-tCJf9duOHZg>,
+        <https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKR9y8Ee-tCJf9duOHZg>,
+        <https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKRdy8Ee-tCJf9duOHZg> .
 
 <https://frittenburger.de/2022/11/EULYNX#UseCase-_u6dKSty8Ee-tCJf9duOHZg> a sysml:UseCase ;
-    rdfs:label "Symmetrischen Schlüssel empfangen"^^xsd:string .
+    rdfs:label "Symmetrischen Schlüssel empfangen"^^xsd:string ;
+    sysml:association <https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKQ9y8Ee-tCJf9duOHZg>,
+        <https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKQty8Ee-tCJf9duOHZg>,
+        <https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKRdy8Ee-tCJf9duOHZg> .
 
 <https://frittenburger.de/2022/11/EULYNX#UseCase-_x9j6UPkVEe-8FYNDIgvuOA> a sysml:UseCase ;
     rdfs:label "Exchange Shared Secret"^^xsd:string ;
@@ -99,14 +95,66 @@
 <https://frittenburger.de/2022/11/EULYNX#Actor-_m_JLMFKJEfCGt4EH7VyqHw> a sysml:Actor ;
     rdfs:label "driver"^^xsd:string .
 
+<https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKQ9y8Ee-tCJf9duOHZg> a sysml:Actor ;
+    rdfs:label "Quantum Key Distribution (QKD)"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKR9y8Ee-tCJf9duOHZg> a sysml:Actor ;
+    rdfs:label "Q-TLS"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Requirement-_1R8xUPkXEe-8FYNDIgvuOA> a sysml:Requirement ;
+    rdfs:label "Quantum Security"^^xsd:string ;
+    sysml:requirementId "REQ-2.1"^^xsd:string ;
+    sysml:requirementText "The implemented cryptographic system must be resistant to attacks from quantum computers.  "^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Requirement-_ECZG4PhUEe--tr9esY6CWw> a sysml:Requirement ;
+    rdfs:label "Quantum Key Distribution (QKD) Integration"^^xsd:string ;
+    sysml:nestedRequirement <https://frittenburger.de/2022/11/EULYNX#Requirement-_KncsQFOOEfCLQJobiW4gfg> ;
+    sysml:requirementId "REQ-1.1"^^xsd:string ;
+    sysml:requirementText "The system must support QKD to generate and securely distribute encryption keys."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Requirement-_KncsQFOOEfCLQJobiW4gfg> a sysml:Requirement ;
+    rdfs:label "TestRequirement"^^xsd:string ;
+    sysml:requirementId "REQ-1.1.1"^^xsd:string ;
+    sysml:requirementText "Test für verschachteltes Requirement"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Requirement-_RAU84PkYEe-8FYNDIgvuOA> a sysml:Requirement ;
+    rdfs:label "..."^^xsd:string ;
+    sysml:requirementId "None"^^xsd:string ;
+    sysml:requirementText "None"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Requirement-_Tw7cQPkYEe-8FYNDIgvuOA> a sysml:Requirement ;
+    rdfs:label "..."^^xsd:string ;
+    sysml:requirementId "None"^^xsd:string ;
+    sysml:requirementText "None"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Requirement-_v2uUMPkWEe-8FYNDIgvuOA> a sysml:Requirement ;
+    rdfs:label "Key Synchronization"^^xsd:string ;
+    sysml:requirementId "REQ-1.2"^^xsd:string ;
+    sysml:requirementText "The communication between the Onboard Unit (OBU) and the Interlocking (IXL) must use a synchronously distributed key via QKD.  "^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Subject-_ZsWvgFOGEfCLQJobiW4gfg> a sysml:Subject ;
+    rdfs:label "Schlüsselspeicher (FDL)"^^xsd:string .
+
 <https://frittenburger.de/2022/11/EULYNX#Actor-_EDryMPkWEe-8FYNDIgvuOA> a sysml:Actor ;
     rdfs:label "IXL"^^xsd:string .
 
+<https://frittenburger.de/2022/11/EULYNX#Actor-_SQXu8Ny9Ee-tCJf9duOHZg> a sysml:Actor ;
+    rdfs:label "Mobiles Gerät (TF)"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Actor-_SQY9Edy9Ee-tCJf9duOHZg> a sysml:Actor ;
+    rdfs:label "Stationäres Gerät (FDL)"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Actor-_SQZkIty9Ee-tCJf9duOHZg> a sysml:Actor ;
+    rdfs:label "Schlüsseltankstelle"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKQty8Ee-tCJf9duOHZg> a sysml:Actor ;
+    rdfs:label "Interlocking (IXL)"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Actor-_u6dKRdy8Ee-tCJf9duOHZg> a sysml:Actor ;
+    rdfs:label "ObjectController (OC)"^^xsd:string .
+
 <https://frittenburger.de/2022/11/EULYNX#Actor-_C2dxIPkWEe-8FYNDIgvuOA> a sysml:Actor ;
     rdfs:label "OBU"^^xsd:string .
-
-<https://frittenburger.de/2022/11/EULYNX#Subject-_15m7YPN-Ee-mNtHHnvaBTw> a sysml:Subject ;
-    rdfs:label "Schlüsselspeicher (FDL)"^^xsd:string .
 
 <https://frittenburger.de/2022/11/EULYNX#Subject-_YaD3cOMHEe-3O-g7VxExLg> a sysml:Subject ;
     rdfs:label "Schlüsselspeicher"^^xsd:string .
