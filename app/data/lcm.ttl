@@ -1,0 +1,303 @@
+@prefix lcm: <http://frittenburger.de/ontology/lcm#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_1> a lcm:Phase ;
+    rdfs:label "Konzept"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-dokumentation> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_10> a lcm:Phase ;
+    rdfs:label "Systemabnahme"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-abnahmebericht>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-billigung_anwendungsbedingungen>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-unabhaengige_bewertung> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_11> a lcm:Phase ;
+    rdfs:label "Betrieb, Instandhaltung und Leistungsüberwachung"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-lebenszyklus_wiederverwendung>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_betriebsanalysen>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_betriebsaufzeichnungen>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_empfehlungen> ;
+    lcm:update <https://frittenburger.de/2022/11/EULYNX#Deliverable-gefaehrdungslogbuch>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-instandhaltungsverfahren>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsnachweise>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-systemsupport>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-zuordnung_rams_anforderungen> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_12> a lcm:Phase ;
+    rdfs:label "Außerbetriebsetzung"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-ausserbetriebnahmebericht>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-stilllegung_auswirkungen> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_2> a lcm:Phase ;
+    rdfs:label "Systemdefinition und betrieblicher Kontext"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_plan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsplan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sys_def> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_3> a lcm:Phase ;
+    rdfs:label "Risikoanalyse und -beurteilung"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-gefaehrdungslogbuch>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-risikobewertung>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-unabh_sicherheitsbew_plan> ;
+    lcm:update <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_plan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsplan> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_4> a lcm:Phase ;
+    rdfs:label "Festlegung von Systemanforderungen"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-anwendungsbedingungen>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_validierungsplan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_anforderung>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsvalidierungsplan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-validierungsbericht_phase_1_4> ;
+    lcm:update <https://frittenburger.de/2022/11/EULYNX#Deliverable-gefaehrdungslogbuch>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_plan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsplan> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_5> a lcm:Phase ;
+    rdfs:label "Architektur und Aufteilung von Systemanforderungen"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-akzeptanzkriterien>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-systemarchitektur>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-zuordnung_rams_anforderungen> ;
+    lcm:update <https://frittenburger.de/2022/11/EULYNX#Deliverable-anwendungsbedingungen>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-gefaehrdungslogbuch>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_plan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_validierungsplan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsplan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsvalidierungsplan> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_6> a lcm:Phase ;
+    rdfs:label "Entwurf und Implementierung"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-gefaehrdungsanalyse>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-inbetriebnahmeverfahren>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-instandhaltungsverfahren>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-lebenszyklusaufgaben_plan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_analyse>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-schulung>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsnachweise> ;
+    lcm:update <https://frittenburger.de/2022/11/EULYNX#Deliverable-anwendungsbedingungen>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-gefaehrdungslogbuch>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_plan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_validierungsplan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsplan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsvalidierungsplan> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_7> a lcm:Phase ;
+    rdfs:label "Herstellung"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-logistik>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-pruefberichte>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-qualitaetsberichte> ;
+    lcm:update <https://frittenburger.de/2022/11/EULYNX#Deliverable-anwendungsbedingungen>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-gefaehrdungslogbuch>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_plan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_validierungsplan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsnachweise>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsplan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsvalidierungsplan> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_8> a lcm:Phase ;
+    rdfs:label "Integration"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-fehlerbehebungsmaßnahmen>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-installationsdoku>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-integrationsbericht>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-systemsupport> ;
+    lcm:update <https://frittenburger.de/2022/11/EULYNX#Deliverable-anwendungsbedingungen>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-gefaehrdungslogbuch>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_plan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_validierungsplan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsnachweise>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsplan>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsvalidierungsplan> .
+
+<https://frittenburger.de/2022/11/EULYNX#Phase-phase_9> a lcm:Phase ;
+    rdfs:label "Systemvalidierung"^^xsd:string ;
+    lcm:deliver <https://frittenburger.de/2022/11/EULYNX#Deliverable-betriebsdatenprozess>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_validierungsbericht>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsvalidierungsbericht> ;
+    lcm:update <https://frittenburger.de/2022/11/EULYNX#Deliverable-anwendungsbedingungen>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-gefaehrdungslogbuch>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsnachweise>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsplan> .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-abnahmebericht> a lcm:Deliverable ;
+    rdfs:label "Abnahmebericht"^^xsd:string ;
+    rdfs:comment "Abschlussbericht zur Systemabnahme"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-akzeptanzkriterien> a lcm:Deliverable ;
+    rdfs:label "Akzeptanzkriterien sowie Nachweis- und Abnahmeprozesse und -verfahren"^^xsd:string ;
+    rdfs:comment "Kriterien und Prozesse für die Systemabnahme"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-ausserbetriebnahmebericht> a lcm:Deliverable ;
+    rdfs:label "Außerbetriebnahmebericht"^^xsd:string ;
+    rdfs:comment "Bericht zum Rückbau und zur Stilllegung"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-betriebsdatenprozess> a lcm:Deliverable ;
+    rdfs:label "Prozess für die Erhebung und Beurteilung von Betriebsdaten"^^xsd:string ;
+    rdfs:comment "Vorgehen zur Erfassung und Auswertung realer Betriebsdaten"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-billigung_anwendungsbedingungen> a lcm:Deliverable ;
+    rdfs:label "Billigung der sicherheitsbezogenen Anwendungsbedingungen"^^xsd:string ;
+    lcm:use <https://frittenburger.de/2022/11/EULYNX#Deliverable-anwendungsbedingungen> ;
+    rdfs:comment "Freigabe der dokumentierten Anwendungsbedingungen"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-dokumentation> a lcm:Deliverable ;
+    rdfs:label "Dokumentation"^^xsd:string ;
+    rdfs:comment "Dokumentation des initialen Konzepts"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-fehlerbehebungsmaßnahmen> a lcm:Deliverable ;
+    rdfs:label "ergriffene Maßnahmen zur Behebung von Fehlern und Inkompatibilitäten"^^xsd:string ;
+    rdfs:comment "Übersicht zur Fehlerbehebung während der Integration"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-gefaehrdungsanalyse> a lcm:Deliverable ;
+    rdfs:label "Gefährdungsanalyse"^^xsd:string ;
+    rdfs:comment "Analyse möglicher Gefahren und ihrer Auswirkungen"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-inbetriebnahmeverfahren> a lcm:Deliverable ;
+    rdfs:label "Installations- und Inbetriebnahmeverfahren"^^xsd:string ;
+    rdfs:comment "Anleitungen zur sicheren Inbetriebnahme"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-installationsdoku> a lcm:Deliverable ;
+    rdfs:label "Installationsdokumentation"^^xsd:string ;
+    rdfs:comment "Technische Dokumentation der Systeminstallation"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-integrationsbericht> a lcm:Deliverable ;
+    rdfs:label "Integrationsbericht"^^xsd:string ;
+    rdfs:comment "Nachweise zur erfolgreichen Systemintegration"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-lebenszyklus_wiederverwendung> a lcm:Deliverable ;
+    rdfs:label "Änderungsantrag zur erneuten Anwendung des Systemlebenszyklus"^^xsd:string ;
+    rdfs:comment "Antrag auf Wiederverwendung bestehender Komponenten"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-lebenszyklusaufgaben_plan> a lcm:Deliverable ;
+    rdfs:label "Plan für weitere Lebenszyklusaufgaben"^^xsd:string ;
+    rdfs:comment "Planung für spätere Lebensphasen"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-logistik> a lcm:Deliverable ;
+    rdfs:label "Vorkehrungen für die Materialhandhabung und die Logistik"^^xsd:string ;
+    rdfs:comment "Planung der Logistikprozesse"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-pruefberichte> a lcm:Deliverable ;
+    rdfs:label "Inspektions- und Prüfberichte"^^xsd:string ;
+    rdfs:comment "Protokolle von Prüf- und Inspektionsmaßnahmen"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-qualitaetsberichte> a lcm:Deliverable ;
+    rdfs:label "Qualitätssicherungsberichte"^^xsd:string ;
+    rdfs:comment "Ergebnisse qualitätssichernder Maßnahmen"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_analyse> a lcm:Deliverable ;
+    rdfs:label "RAM-Analyse"^^xsd:string ;
+    rdfs:comment "Untersuchung der RAM-Eigenschaften"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_betriebsaufzeichnungen> a lcm:Deliverable ;
+    rdfs:label "Pläne und Aufzeichnungen zu RAMS-Aufgaben der Lebensphase"^^xsd:string ;
+    rdfs:comment "Dokumentation von RAMS-Maßnahmen im Betrieb"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_empfehlungen> a lcm:Deliverable ;
+    rdfs:label "festgelegte Empfehlungen und Aufzeichnung der zugehörigen Entscheidungen"^^xsd:string ;
+    lcm:use <https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_betriebsanalysen> ;
+    rdfs:comment "Entscheidungen und Handlungsanweisungen während des Betriebs"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_validierungsbericht> a lcm:Deliverable ;
+    rdfs:label "RAMS-Validierungsbericht"^^xsd:string ;
+    rdfs:comment "Ergebnisdokument der RAMS-Validierung"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-risikobewertung> a lcm:Deliverable ;
+    rdfs:label "Risikobewertung"^^xsd:string ;
+    rdfs:comment "Identifikation und Bewertung potenzieller Risiken"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-schnittstellen_spezifikationen> a lcm:Deliverable ;
+    rdfs:label "Schnittstellenspezifikationen"^^xsd:string ;
+    rdfs:comment "Dokumentation der technischen und funktionalen Schnittstellen zwischen Subsystemen und externen Systemen."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-schulung> a lcm:Deliverable ;
+    rdfs:label "Schulungsmaßnahmen"^^xsd:string ;
+    rdfs:comment "Schulungspläne für das Betriebspersonal"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsvalidierungsbericht> a lcm:Deliverable ;
+    rdfs:label "Sicherheitsvalidierungsbericht"^^xsd:string ;
+    rdfs:comment "Dokument zur Bestätigung der erreichten Sicherheit"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-stilllegung_auswirkungen> a lcm:Deliverable ;
+    rdfs:label "mit der Stilllegung/dem Abbau des Systems verbundenen Auswirkungen auf RAMS"^^xsd:string ;
+    rdfs:comment "Bewertung der Auswirkungen der Außerbetriebnahme"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-subsystems_and_components> a lcm:Deliverable ;
+    rdfs:label "Subsysteme und Komponenten"^^xsd:string ;
+    rdfs:comment "Die Definition der Subsystem und Komponenten"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-sys_def> a lcm:Deliverable ;
+    rdfs:label "Systemdefinition"^^xsd:string ;
+    rdfs:comment "Beschreibung der Systemgrenzen und Systemfunktionen"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-system_gefaehrdungsanalyse> a lcm:Deliverable ;
+    rdfs:label "Systemgefährdungsanalyse"^^xsd:string ;
+    rdfs:comment "Analyse potenzieller Gefährdungen auf Systemebene zur Identifikation systemweiter Risiken und Sicherheitsmaßnahmen."^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-systemarchitektur> a lcm:Deliverable ;
+    rdfs:label "Systemarchitektur"^^xsd:string ;
+    lcm:include <https://frittenburger.de/2022/11/EULYNX#Deliverable-schnittstellen_spezifikationen>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-system_gefaehrdungsanalyse> ;
+    rdfs:comment "Struktur des Gesamtsystems"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-unabh_sicherheitsbew_plan> a lcm:Deliverable ;
+    rdfs:label "Plan für die unabhängige Sicherheitsbewertung"^^xsd:string ;
+    rdfs:comment "Vorgehensweise zur externen Sicherheitsüberprüfung"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-unabhaengige_bewertung> a lcm:Deliverable ;
+    rdfs:label "Bericht zur unabhängigen Sicherheitsbewertung"^^xsd:string ;
+    rdfs:comment "Externe Bewertung der Sicherheitsanforderungen"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-validierungsbericht_phase_1_4> a lcm:Deliverable ;
+    rdfs:label "Validierungsbericht zu den Phasen 1 bis 4"^^xsd:string ;
+    rdfs:comment "Zusammenfassung der Ergebnisse der frühen Phasen"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-instandhaltungsverfahren> a lcm:Deliverable ;
+    rdfs:label "Betriebs- und Instandhaltungsverfahren"^^xsd:string ;
+    rdfs:comment "Prozesse zur Bedienung und Wartung des Systems"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_anforderung> a lcm:Deliverable ;
+    rdfs:label "Anforderungsspezifikation für die RAMS des Systems"^^xsd:string ;
+    rdfs:comment "Detaillierte Anforderungen bzgl. RAMS"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_betriebsanalysen> a lcm:Deliverable ;
+    rdfs:label "Berichte und Analysen der RAMS-Leistungsmerkmale"^^xsd:string ;
+    rdfs:comment "Auswertung der Systemleistung im Betrieb"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-systemsupport> a lcm:Deliverable ;
+    rdfs:label "Vorkehrungen für den Systemsupport"^^xsd:string ;
+    rdfs:comment "Maßnahmen zur Sicherstellung des Betriebs"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-zuordnung_rams_anforderungen> a lcm:Deliverable ;
+    rdfs:label "Zuordnung der RAMS-bezogenen Anforderungsspezifikation zu Subsystemen und/oder Komponenten"^^xsd:string ;
+    lcm:use <https://frittenburger.de/2022/11/EULYNX#Deliverable-rams_anforderung>,
+        <https://frittenburger.de/2022/11/EULYNX#Deliverable-subsystems_and_components> ;
+    rdfs:comment "Aufschlüsselung der Anforderungen nach Komponenten"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_validierungsplan> a lcm:Deliverable ;
+    rdfs:label "RAM-Validierungsplan für die folgenden Phasen"^^xsd:string ;
+    rdfs:comment "Vorgehen zur RAM-Validierung der späteren Entwicklungsphasen"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsnachweise> a lcm:Deliverable ;
+    rdfs:label "Sicherheitsnachweise"^^xsd:string ;
+    rdfs:comment "Dokumentation zum Nachweis der Sicherheitsanforderungen"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsvalidierungsplan> a lcm:Deliverable ;
+    rdfs:label "Sicherheitsvalidierungsplan für die folgenden Phasen"^^xsd:string ;
+    rdfs:comment "Vorgehen zur Sicherheitsvalidierung der späteren Entwicklungsphasen"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-anwendungsbedingungen> a lcm:Deliverable ;
+    rdfs:label "Sicherheitsbezogene Anwendungsbedingungen"^^xsd:string ;
+    rdfs:comment "Bedingungen für einen sicheren Betrieb"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-ram_plan> a lcm:Deliverable ;
+    rdfs:label "RAM-Plan"^^xsd:string ;
+    rdfs:comment "Planung zur Erreichung der Zuverlässigkeit, Verfügbarkeit und Wartbarkeit"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-gefaehrdungslogbuch> a lcm:Deliverable ;
+    rdfs:label "Gefährdungslogbuch"^^xsd:string ;
+    rdfs:comment "Dokumentation erkannter Gefährdungen und ihrer Behandlung"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Deliverable-sicherheitsplan> a lcm:Deliverable ;
+    rdfs:label "Sicherheitsplan"^^xsd:string ;
+    rdfs:comment "Planung sicherheitsrelevanter Aktivitäten"^^xsd:string .
+

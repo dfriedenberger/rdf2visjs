@@ -2,6 +2,15 @@
 @prefix sysml: <http://frittenburger.de/ontology/sysml#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://frittenburger.de/2022/11/EULYNX#Actor-_SZ-KQF77EfC7zM_i7orNRw> a sysml:Actor ;
+    rdfs:label "Fahrdienstleiter (FDL)"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Actor-_bvfdQF79EfC7zM_i7orNRw> a sysml:Actor ;
+    rdfs:label "Triebfahrzeugfüher"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Actor-_xc-qMF5JEfCsVe-BnEzzHQ> a sysml:Actor ;
+    rdfs:label "TF"^^xsd:string .
+
 <https://frittenburger.de/2022/11/EULYNX#Requirement-_BtFR0PhTEe--tr9esY6CWw> a sysml:Requirement ;
     rdfs:label "Functional Requirements"^^xsd:string ;
     sysml:nestedRequirement <https://frittenburger.de/2022/11/EULYNX#Requirement-_ECZG4PhUEe--tr9esY6CWw>,

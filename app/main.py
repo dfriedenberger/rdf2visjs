@@ -21,16 +21,16 @@ app.add_middleware(
 
 projects = [
     {
-        "id": "mut-flexidug",
+        "id": "mmut-flexidug",
         "name": "FlexiDug MicroModels and Transformations",
         "model": "data/mut-flexidug.ttl",
-        "mapping": "data/mut-mapping.txt"
+        "mapping": "data/mmut-mapping.txt"
     },
     {
-        "id": "mut-squirrl",
+        "id": "mmut-squirrl",
         "name": "SQuIRRL MicroModels and Transformations",
-        "model": "data/mut-squirrl.ttl",
-        "mapping": "data/mut-mapping.txt"
+        "model": "data/mmut-squirrl.ttl",
+        "mapping": "data/mmut-mapping.txt"
     },
     {
         "id": "map",
@@ -45,9 +45,21 @@ projects = [
         "mapping": "data/flexidug-mapping.txt"
     },
     {
-        "id": "sysml-squirrl",
-        "name": "SQuIRRL SysML Model",
+        "id": "lcm",
+        "name": "RAMS Life Cycle Model",
+        "model": "data/lcm.ttl",
+        "mapping": "data/lcm-mapping.txt"
+    },
+    {
+        "id": "sysml-squirrl-file",
+        "name": "SQuIRRL SysML Model (deprecated)",
         "model": "data/sysml-squirrl.ttl",
+        "mapping": "data/sysml-mapping.txt"
+    },
+    {
+        "id": "sysml-squirrl-online",
+        "name": "SQuIRRL SysML Model (online)",
+        "model": "http://localhost:3030/test/data?graph=http://squirrl.hpi.de/",
         "mapping": "data/sysml-mapping.txt"
     },
 ]

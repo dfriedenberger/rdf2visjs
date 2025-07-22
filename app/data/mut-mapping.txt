@@ -1,4 +1,0 @@
-http://frittenburger.de/ontoloie/mut#RDFMicroModel /icons/rdf-model.svg
-http://frittenburger.de/ontoloie/mut#BinaryMicroModel /icons/binary-code-binary-svgrepo-com.svg
-http://frittenburger.de/ontoloie/mut#SysMLMicroModel /icons/sysml-svgrepo-com.svg
-http://frittenburger.de/ontoloie/mut#PythonScriptTransformation /svg/transformation.svg?X={{label}}

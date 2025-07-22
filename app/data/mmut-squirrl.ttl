@@ -1,0 +1,241 @@
+@prefix MMUT: <http://frittenburger.de/ontology/mmut#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Dummy-Load-Aviation-System-Model> a MMUT:ContainerProperties ;
+    rdfs:label "Container properties for Dummy Load Aviation System Model"^^xsd:string ;
+    MMUT:hasCommandSequence [ a rdf:Seq ;
+            rdf:_1 "echo"^^xsd:string ;
+            rdf:_2 "load Aviation System Model"^^xsd:string ] ;
+    MMUT:hasEnvironment <https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Dummy-Load-Aviation-System-Model> ;
+    MMUT:image "simple-mut"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Dummy-Load-Road-System-Model> a MMUT:ContainerProperties ;
+    rdfs:label "Container properties for Dummy Load Road System Model"^^xsd:string ;
+    MMUT:hasCommandSequence [ a rdf:Seq ;
+            rdf:_1 "echo"^^xsd:string ;
+            rdf:_2 "load Road System Model"^^xsd:string ] ;
+    MMUT:hasEnvironment <https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Dummy-Load-Road-System-Model> ;
+    MMUT:image "simple-mut"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Dummy-Transform-Aviation-System-Model> a MMUT:ContainerProperties ;
+    rdfs:label "Container properties for Dummy Transform Aviation System Model"^^xsd:string ;
+    MMUT:hasCommandSequence [ a rdf:Seq ;
+            rdf:_1 "echo"^^xsd:string ;
+            rdf:_2 "transform Aviation System Model"^^xsd:string ] ;
+    MMUT:hasEnvironment <https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Dummy-Transform-Aviation-System-Model> ;
+    MMUT:image "simple-mut"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Dummy-Transform-Road-System-Model> a MMUT:ContainerProperties ;
+    rdfs:label "Container properties for Dummy Transform Road System Model"^^xsd:string ;
+    MMUT:hasCommandSequence [ a rdf:Seq ;
+            rdf:_1 "echo"^^xsd:string ;
+            rdf:_2 "transform Road System Model"^^xsd:string ] ;
+    MMUT:hasEnvironment <https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Dummy-Transform-Road-System-Model> ;
+    MMUT:image "simple-mut"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Load-Rail-System-Model> a MMUT:ContainerProperties ;
+    rdfs:label "Container properties for Load Rail System Model"^^xsd:string ;
+    MMUT:hasCommandSequence [ a rdf:Seq ;
+            rdf:_1 "--input-path"^^xsd:string ;
+            rdf:_2 "SQuIRRL.uml"^^xsd:string ;
+            rdf:_3 "--output-path"^^xsd:string ;
+            rdf:_4 "{{resolve:system:modelpath}}rail.uml"^^xsd:string ] ;
+    MMUT:hasEnvironment <https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Load-Rail-System-Model> ;
+    MMUT:image "frittenburger/loadmodelfromgitlab:dev"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Load-Requirements-Model> a MMUT:ContainerProperties ;
+    rdfs:label "Container properties for Load Requirements Model"^^xsd:string ;
+    MMUT:hasCommandSequence [ a rdf:Seq ;
+            rdf:_1 "--repo"^^xsd:string ;
+            rdf:_2 "https://git@git.overleaf.com/67f7af9515b9eebac21afaaa"^^xsd:string ;
+            rdf:_3 "--input-path"^^xsd:string ;
+            rdf:_4 "_inhalte.tex"^^xsd:string ;
+            rdf:_5 "--output-path"^^xsd:string ;
+            rdf:_6 "{{resolve:system:modelpath}}requirements.tex"^^xsd:string ] ;
+    MMUT:hasEnvironment <https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Load-Requirements-Model> ;
+    MMUT:image "frittenburger/loadartifactfromgit:dev"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Save-SysML-Model> a MMUT:ContainerProperties ;
+    rdfs:label "Container properties for Save SysML Model"^^xsd:string ;
+    MMUT:hasCommandSequence [ a rdf:Seq ;
+            rdf:_1 "--dataset"^^xsd:string ;
+            rdf:_2 "test"^^xsd:string ;
+            rdf:_3 "--input-folder"^^xsd:string ;
+            rdf:_4 "{{resolve:system:modelpath}}all/"^^xsd:string ;
+            rdf:_5 "--graph"^^xsd:string ;
+            rdf:_6 "http://squirrl.hpi.de/"^^xsd:string ] ;
+    MMUT:hasEnvironment <https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Save-SysML-Model> ;
+    MMUT:image "frittenburger/pushrdfmodel:dev"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Transform-Rail-System-Model-to-RDF> a MMUT:ContainerProperties ;
+    rdfs:label "Container properties for Transform Rail System Model to RDF"^^xsd:string ;
+    MMUT:hasCommandSequence [ a rdf:Seq ;
+            rdf:_1 "--input-sysml"^^xsd:string ;
+            rdf:_2 "{{resolve:system:modelpath}}rail.uml"^^xsd:string ;
+            rdf:_3 "--output-rdf"^^xsd:string ;
+            rdf:_4 "{{resolve:system:modelpath}}all/rail.ttl"^^xsd:string ] ;
+    MMUT:hasEnvironment <https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Transform-Rail-System-Model-to-RDF> ;
+    MMUT:image "frittenburger/sysml2rdf:dev"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Transform-Requirements-Model-to-RDF> a MMUT:ContainerProperties ;
+    rdfs:label "Container properties for Transform Requirements Model to RDF"^^xsd:string ;
+    MMUT:hasCommandSequence [ a rdf:Seq ;
+            rdf:_1 "--input-latex"^^xsd:string ;
+            rdf:_2 "{{resolve:system:modelpath}}requirements.tex"^^xsd:string ;
+            rdf:_3 "--output-rdf"^^xsd:string ;
+            rdf:_4 "{{resolve:system:modelpath}}all/requirements.ttl"^^xsd:string ] ;
+    MMUT:hasEnvironment <https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Transform-Requirements-Model-to-RDF> ;
+    MMUT:image "frittenburger/parselatex:dev"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Dummy-Load-Aviation-System-Model> a MMUT:Environment ;
+    rdfs:label "Environment for Dummy Load Aviation System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Dummy-Load-Road-System-Model> a MMUT:Environment ;
+    rdfs:label "Environment for Dummy Load Road System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Dummy-Transform-Aviation-System-Model> a MMUT:Environment ;
+    rdfs:label "Environment for Dummy Transform Aviation System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Dummy-Transform-Road-System-Model> a MMUT:Environment ;
+    rdfs:label "Environment for Dummy Transform Road System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Load-Rail-System-Model> a MMUT:Environment ;
+    rdfs:label "Environment for Load Rail System Model"^^xsd:string ;
+    MMUT:hasKeyValuePair <https://frittenburger.de/2022/11/EULYNX#KeyValuePair-EnvironmentKey-Load-Rail-System-Model/GITLAB_PROJECT_ID>,
+        <https://frittenburger.de/2022/11/EULYNX#KeyValuePair-EnvironmentKey-Load-Rail-System-Model/GITLAB_TOKEN>,
+        <https://frittenburger.de/2022/11/EULYNX#KeyValuePair-EnvironmentKey-Load-Rail-System-Model/GITLAB_URL> .
+
+<https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Load-Requirements-Model> a MMUT:Environment ;
+    rdfs:label "Environment for Load Requirements Model"^^xsd:string ;
+    MMUT:hasKeyValuePair <https://frittenburger.de/2022/11/EULYNX#KeyValuePair-EnvironmentKey-Load-Requirements-Model/GIT_TOKEN> .
+
+<https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Save-SysML-Model> a MMUT:Environment ;
+    rdfs:label "Environment for Save SysML Model"^^xsd:string ;
+    MMUT:hasKeyValuePair <https://frittenburger.de/2022/11/EULYNX#KeyValuePair-EnvironmentKey-Save-SysML-Model/FUSEKI_URL> .
+
+<https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Transform-Rail-System-Model-to-RDF> a MMUT:Environment ;
+    rdfs:label "Environment for Transform Rail System Model to RDF"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#Environment-Environment-for-Transform-Requirements-Model-to-RDF> a MMUT:Environment ;
+    rdfs:label "Environment for Transform Requirements Model to RDF"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#KeyValuePair-EnvironmentKey-Load-Rail-System-Model/GITLAB_PROJECT_ID> a MMUT:KeyValuePair ;
+    rdfs:label "EnvironmentKey Load Rail System Model/GITLAB_PROJECT_ID"^^xsd:string ;
+    MMUT:key "GITLAB_PROJECT_ID"^^xsd:string ;
+    MMUT:value "7987"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#KeyValuePair-EnvironmentKey-Load-Rail-System-Model/GITLAB_TOKEN> a MMUT:KeyValuePair ;
+    rdfs:label "EnvironmentKey Load Rail System Model/GITLAB_TOKEN"^^xsd:string ;
+    MMUT:key "GITLAB_TOKEN"^^xsd:string ;
+    MMUT:value "{{resolve:secrets:gitlab-hpi:token}}"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#KeyValuePair-EnvironmentKey-Load-Rail-System-Model/GITLAB_URL> a MMUT:KeyValuePair ;
+    rdfs:label "EnvironmentKey Load Rail System Model/GITLAB_URL"^^xsd:string ;
+    MMUT:key "GITLAB_URL"^^xsd:string ;
+    MMUT:value "https://gitlab.hpi.de/"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#KeyValuePair-EnvironmentKey-Load-Requirements-Model/GIT_TOKEN> a MMUT:KeyValuePair ;
+    rdfs:label "EnvironmentKey Load Requirements Model/GIT_TOKEN"^^xsd:string ;
+    MMUT:key "GIT_TOKEN"^^xsd:string ;
+    MMUT:value "{{resolve:secrets:overleaf-git:token}}"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#KeyValuePair-EnvironmentKey-Save-SysML-Model/FUSEKI_URL> a MMUT:KeyValuePair ;
+    rdfs:label "EnvironmentKey Save SysML Model/FUSEKI_URL"^^xsd:string ;
+    MMUT:key "FUSEKI_URL"^^xsd:string ;
+    MMUT:value "http://host.docker.internal:3030"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-a> a MMUT:PythonScriptTransformation ;
+    rdfs:label "a"^^xsd:string ;
+    MMUT:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-SQuIRRL> ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Transform-Rail-System-Model-to-RDF> ;
+    rdfs:comment "Create Rail System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-b> a MMUT:PythonScriptTransformation ;
+    rdfs:label "b"^^xsd:string ;
+    MMUT:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-SQuIRRL> ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Transform-Road-System-Model> ;
+    rdfs:comment "Create Road System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-c> a MMUT:PythonScriptTransformation ;
+    rdfs:label "c"^^xsd:string ;
+    MMUT:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-SQuIRRL> ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Transform-Aviation-System-Model> ;
+    rdfs:comment "Create Aviation System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-d> a MMUT:PythonScriptTransformation ;
+    rdfs:label "d"^^xsd:string ;
+    MMUT:hasOutputModel <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-SQuIRRL> ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Transform-Requirements-Model-to-RDF> ;
+    rdfs:comment "Create Requirements Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Aviation> a MMUT:SysMLMicroModel ;
+    rdfs:label "Aviation"^^xsd:string ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Load-Aviation-System-Model> ;
+    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-c> ;
+    rdfs:comment "Aviation System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Rail> a MMUT:SysMLMicroModel ;
+    rdfs:label "Rail"^^xsd:string ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Load-Rail-System-Model> ;
+    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-a> ;
+    rdfs:comment "Rail System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Requirements> a MMUT:SysMLMicroModel ;
+    rdfs:label "Requirements"^^xsd:string ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Load-Requirements-Model> ;
+    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-d> ;
+    rdfs:comment "Requirements Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Road> a MMUT:SysMLMicroModel ;
+    rdfs:label "Road"^^xsd:string ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Load-Road-System-Model> ;
+    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-b> ;
+    rdfs:comment "Road System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Load-Aviation-System-Model> a MMUT:TaskDefinition ;
+    rdfs:label "Dummy Load Aviation System Model"^^xsd:string ;
+    MMUT:hasContainerProperties <https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Dummy-Load-Aviation-System-Model> .
+
+<https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Load-Road-System-Model> a MMUT:TaskDefinition ;
+    rdfs:label "Dummy Load Road System Model"^^xsd:string ;
+    MMUT:hasContainerProperties <https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Dummy-Load-Road-System-Model> .
+
+<https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Transform-Aviation-System-Model> a MMUT:TaskDefinition ;
+    rdfs:label "Dummy Transform Aviation System Model"^^xsd:string ;
+    MMUT:hasContainerProperties <https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Dummy-Transform-Aviation-System-Model> .
+
+<https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Transform-Road-System-Model> a MMUT:TaskDefinition ;
+    rdfs:label "Dummy Transform Road System Model"^^xsd:string ;
+    MMUT:hasContainerProperties <https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Dummy-Transform-Road-System-Model> .
+
+<https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Load-Rail-System-Model> a MMUT:TaskDefinition ;
+    rdfs:label "Load Rail System Model"^^xsd:string ;
+    MMUT:hasContainerProperties <https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Load-Rail-System-Model> .
+
+<https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Load-Requirements-Model> a MMUT:TaskDefinition ;
+    rdfs:label "Load Requirements Model"^^xsd:string ;
+    MMUT:hasContainerProperties <https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Load-Requirements-Model> .
+
+<https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Save-SysML-Model> a MMUT:TaskDefinition ;
+    rdfs:label "Save SysML Model"^^xsd:string ;
+    MMUT:hasContainerProperties <https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Save-SysML-Model> .
+
+<https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Transform-Rail-System-Model-to-RDF> a MMUT:TaskDefinition ;
+    rdfs:label "Transform Rail System Model to RDF"^^xsd:string ;
+    MMUT:hasContainerProperties <https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Transform-Rail-System-Model-to-RDF> .
+
+<https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Transform-Requirements-Model-to-RDF> a MMUT:TaskDefinition ;
+    rdfs:label "Transform Requirements Model to RDF"^^xsd:string ;
+    MMUT:hasContainerProperties <https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Transform-Requirements-Model-to-RDF> .
+
+<https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-SQuIRRL> a MMUT:RDFMicroModel ;
+    rdfs:label "SQuIRRL"^^xsd:string ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Save-SysML-Model> ;
+    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Aviation>,
+        <https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Rail>,
+        <https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Requirements>,
+        <https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Road> ;
+    rdfs:comment "SQuIRRL System Model"^^xsd:string .
+
