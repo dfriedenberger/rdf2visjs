@@ -1,0 +1,14 @@
+# Ontology Mapping Configuration
+namespaces:
+   gap: "http://frittenburger.de/ontoloie/gap#"
+
+# Icon mappings for ontology classes
+mappings:
+  "gap:Artifact": "/icons/file-svgrepo-com.svg"
+  "gap:Process": "/svg/process.svg?PLATZHALTER={{label}}"
+
+views:
+  all: 
+    name: "Alles"
+    include: 
+      - "*"

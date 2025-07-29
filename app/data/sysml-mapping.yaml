@@ -1,0 +1,22 @@
+# Ontology Mapping Configuration
+namespaces:
+   sysml: "http://frittenburger.de/ontology/sysml#"
+
+# Icon mappings for ontology classes
+mappings:
+  "sysml:Actor": "/icons/person-svgrepo-com.svg"
+  "sysml:UseCase": "/svg/usecase.svg?PLATZHALTER={{label}}"
+  "sysml:Requirement": "/icons/requeriments-svgrepo-com.svg"
+
+views:
+  all: 
+    name: "Alles"
+    include: 
+      - "*"
+  usecases: 
+    name: "Use Cases"
+    include: 
+      - "sysml:Actor"
+      - "sysml:UseCase"
+    exclude: 
+      - "*"

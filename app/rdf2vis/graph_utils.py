@@ -1,9 +1,9 @@
 import re
 from rdflib import Graph
 from .sparql_wrapper import SparQLWrapper
+from .mapping_reader import MappingReader
 
-
-def gen_graph(filename, mapping_file):
+def gen_graph(filename, mapping_yaml_file):
 
     # RDF-Graph erzeugen
     g = Graph()
@@ -19,39 +19,27 @@ def gen_graph(filename, mapping_file):
     nodes_id = dict()
     node_id = 0
 
-    icon_mapping = dict()
-    with open(mapping_file, "r", encoding="utf-8") as f:
-        for line in f.readlines():
-            line = line.strip()
-            if line == "" or line.startswith("#"):
-                continue
-            # Mapping-Definitionen einlesen
-            p = line.split(r' ')
-            if len(p) != 2:
-                print(f"Fehlerhafte Mapping-Definition: {line} => {p}")
-                continue
-            # Mapping-Definitionen speichern
-            icon_mapping[p[0]] = p[1]
+    # Mapping-Datei einlesen
+    mapping_reader = MappingReader(mapping_yaml_file)
+    views = mapping_reader.get_views()
 
     instance_types = set()
     sparql_wrapper = SparQLWrapper(g)
     for inst in sparql_wrapper.get_instances():
 
-        icon = "/icons/node-svgrepo-com.svg"
         user_data = {
             "type": "None",
-            "label": "-",
-           
+            "label": "-"
         }
         attributes = {}
         # Instanztyp abfragen
         inst_type = str(sparql_wrapper.get_type(inst))
         instance_types.add(inst_type)
-        print(inst, "type:", inst_type, icon_mapping)
-        if inst_type in icon_mapping:
-            icon = icon_mapping[inst_type]
-        user_data["type"] = inst_type.split("#")[-1]  # Nur den letzten Teil des Typs verwenden
 
+        icon = mapping_reader.get_icon_for_uri(inst_type, "/icons/node-svgrepo-com.svg")
+        print(inst, "type:", inst_type, icon)
+
+        user_data["type"] = inst_type.split("#")[-1]  # Nur den letzten Teil des Typs verwenden
         label = str(inst)
         for prop, obj in sparql_wrapper.get_object_properties(inst):
             print(inst, "property:", prop, "object:", obj)
@@ -78,6 +66,13 @@ def gen_graph(filename, mapping_file):
 
         node_id += 1
         nodes_id[inst] = node_id
+
+        # Views
+        user_data["views"] = []
+        for view in views:
+            if mapping_reader.contains_in_view(view, inst_type):
+                user_data["views"].append(view)
+
         nodes.append({"id": node_id, "label": label, "shape": "image", "image": icon, "user_data": user_data})
 
     edges = []
@@ -88,14 +83,15 @@ def gen_graph(filename, mapping_file):
 
         edges.append({"from": nodes_id[from_ref], "to": nodes_id[to_ref], "label": label})
 
-    # Tripel ausgeben (Subjekt - Prädikat - Objekt)
-    #for subj, pred, obj in g:
-    #    print(f"{subj} -- {pred} --> {obj}")
-
     it = sorted(list(instance_types))
     print("Instance types:", it)
 
+    view_lables = {}
+    for view in views:
+        view_lables[view] = mapping_reader.get_view_config(view)["name"]
+
     return {
+        "views": view_lables,
         "nodes": nodes,
         "edges": edges
     }

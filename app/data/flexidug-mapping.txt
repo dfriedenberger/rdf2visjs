@@ -1,3 +1,0 @@
-http://osm.hpi.de/ontology/system#Function /icons/function-square-svgrepo-com.svg
-http://osm.hpi.de/ontology/system#Message /icons/letter-svgrepo-com.svg
-http://osm.hpi.de/ontology/system#Actor /icons/person-svgrepo-com.svg

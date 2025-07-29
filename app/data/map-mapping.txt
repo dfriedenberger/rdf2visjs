@@ -1,3 +1,0 @@
-http://frittenburger.de/ontoloie/gap#Process /svg/process.svg?PLATZHALTER={{label}}
-http://frittenburger.de/ontoloie/gap#Artifact /icons/file-svgrepo-com.svg
-

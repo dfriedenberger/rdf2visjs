@@ -24,43 +24,43 @@ projects = [
         "id": "mmut-flexidug",
         "name": "FlexiDug MicroModels and Transformations",
         "model": "data/mut-flexidug.ttl",
-        "mapping": "data/mmut-mapping.txt"
+        "mapping": "data/mmut-mapping.yaml"
     },
     {
         "id": "mmut-squirrl",
         "name": "SQuIRRL MicroModels and Transformations",
         "model": "data/mmut-squirrl.ttl",
-        "mapping": "data/mmut-mapping.txt"
+        "mapping": "data/mmut-mapping.yaml"
     },
     {
         "id": "map",
         "name": "Map",
         "model": "data/map.ttl",
-        "mapping": "data/map-mapping.txt"
+        "mapping": "data/map-mapping.yaml"
     },
     {
         "id": "flexidug",
         "name": "FlexiDug Model",
         "model": "data/flexidug.ttl",
-        "mapping": "data/flexidug-mapping.txt"
+        "mapping": "data/flexidug-mapping.yaml"
     },
     {
         "id": "lcm",
         "name": "RAMS Life Cycle Model",
         "model": "data/lcm.ttl",
-        "mapping": "data/lcm-mapping.txt"
+        "mapping": "data/lcm-mapping.yaml"
     },
     {
         "id": "sysml-squirrl-file",
         "name": "SQuIRRL SysML Model (deprecated)",
         "model": "data/sysml-squirrl.ttl",
-        "mapping": "data/sysml-mapping.txt"
+        "mapping": "data/sysml-mapping.yaml"
     },
     {
         "id": "sysml-squirrl-online",
         "name": "SQuIRRL SysML Model (online)",
         "model": "http://localhost:3030/test/data?graph=http://squirrl.hpi.de/",
-        "mapping": "data/sysml-mapping.txt"
+        "mapping": "data/sysml-mapping.yaml"
     },
 ]
 

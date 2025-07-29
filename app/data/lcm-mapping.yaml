@@ -1,0 +1,13 @@
+# Ontology Mapping Configuration
+namespaces:
+   lcm: "http://frittenburger.de/ontology/lcm#"
+
+# Icon mappings for ontology classes
+mappings:
+  "lcm:Deliverable": "/icons/file-svgrepo-com.svg"
+
+views:
+  all: 
+    name: "Alles"
+    include: 
+      - "*"

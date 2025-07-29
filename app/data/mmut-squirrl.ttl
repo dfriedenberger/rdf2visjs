@@ -3,6 +3,30 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://frittenburger.de/2022/11/EULYNX#BinaryMicroModel-Requirements> a MMUT:BinaryMicroModel ;
+    rdfs:label "Requirements"^^xsd:string ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Load-Requirements-Model> ;
+    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-d> ;
+    rdfs:comment "Requirements Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Aviation> a MMUT:SysMLMicroModel ;
+    rdfs:label "Aviation"^^xsd:string ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Load-Aviation-System-Model> ;
+    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-c> ;
+    rdfs:comment "Aviation System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Rail> a MMUT:SysMLMicroModel ;
+    rdfs:label "Rail"^^xsd:string ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Load-Rail-System-Model> ;
+    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-a> ;
+    rdfs:comment "Rail System Model"^^xsd:string .
+
+<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Road> a MMUT:SysMLMicroModel ;
+    rdfs:label "Road"^^xsd:string ;
+    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Load-Road-System-Model> ;
+    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-b> ;
+    rdfs:comment "Road System Model"^^xsd:string .
+
 <https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Dummy-Load-Aviation-System-Model> a MMUT:ContainerProperties ;
     rdfs:label "Container properties for Dummy Load Aviation System Model"^^xsd:string ;
     MMUT:hasCommandSequence [ a rdf:Seq ;
@@ -170,30 +194,6 @@
     MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Transform-Requirements-Model-to-RDF> ;
     rdfs:comment "Create Requirements Model"^^xsd:string .
 
-<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Aviation> a MMUT:SysMLMicroModel ;
-    rdfs:label "Aviation"^^xsd:string ;
-    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Load-Aviation-System-Model> ;
-    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-c> ;
-    rdfs:comment "Aviation System Model"^^xsd:string .
-
-<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Rail> a MMUT:SysMLMicroModel ;
-    rdfs:label "Rail"^^xsd:string ;
-    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Load-Rail-System-Model> ;
-    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-a> ;
-    rdfs:comment "Rail System Model"^^xsd:string .
-
-<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Requirements> a MMUT:SysMLMicroModel ;
-    rdfs:label "Requirements"^^xsd:string ;
-    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Load-Requirements-Model> ;
-    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-d> ;
-    rdfs:comment "Requirements Model"^^xsd:string .
-
-<https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Road> a MMUT:SysMLMicroModel ;
-    rdfs:label "Road"^^xsd:string ;
-    MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Load-Road-System-Model> ;
-    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#PythonScriptTransformation-b> ;
-    rdfs:comment "Road System Model"^^xsd:string .
-
 <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Dummy-Load-Aviation-System-Model> a MMUT:TaskDefinition ;
     rdfs:label "Dummy Load Aviation System Model"^^xsd:string ;
     MMUT:hasContainerProperties <https://frittenburger.de/2022/11/EULYNX#ContainerProperties-Container-properties-for-Dummy-Load-Aviation-System-Model> .
@@ -233,9 +233,5 @@
 <https://frittenburger.de/2022/11/EULYNX#RDFMicroModel-SQuIRRL> a MMUT:RDFMicroModel ;
     rdfs:label "SQuIRRL"^^xsd:string ;
     MMUT:hasTaskDefinition <https://frittenburger.de/2022/11/EULYNX#TaskDefinition-Save-SysML-Model> ;
-    MMUT:isInputModelOf <https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Aviation>,
-        <https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Rail>,
-        <https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Requirements>,
-        <https://frittenburger.de/2022/11/EULYNX#SysMLMicroModel-Road> ;
     rdfs:comment "SQuIRRL System Model"^^xsd:string .
 

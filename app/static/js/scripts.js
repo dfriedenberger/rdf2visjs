@@ -99,6 +99,34 @@ function createNetwork(graph) {
       }
     });
 
+   
+    // Leeren (optional)
+    $('#viewSelector').empty();
+
+    // Optionen hinzufügen
+    $.each(graph.views, function(key, label) {
+      $('#viewSelector').append(
+        $('<option>', {
+          value: key,
+          text: label
+        })
+      );
+    });
+
+
+    $('#viewSelector').on('change', function () {
+      view = $(this).val();
+      console.log("View changed to: " + view);
+      
+      nodes.get().forEach(function (node) {
+        if (node.user_data?.views.includes(view)) {
+          nodes.update({ id: node.id, hidden: false });
+        } else {
+          nodes.update({ id: node.id, hidden: true });
+        }
+      });
+    });
+
 
 }
 

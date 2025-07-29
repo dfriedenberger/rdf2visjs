@@ -1,0 +1,17 @@
+namespaces:
+  mmut: "http://frittenburger.de/ontology/mmut#"
+  xxx: "http://example.org/xxx#"
+
+mappings:
+  "mmut:RDFMicroModel": "/icons/rdf-model.svg"
+  "mmut:BinaryMicroModel": "/icons/binary-code.svg"
+  "mmut:TaskDefinition": "/icons/process.svg"
+
+views:
+  mmut:
+    name: "Test View"
+    include:
+      - "mmut:RDFMicroModel"
+      - "mmut:BinaryMicroModel"
+    exclude:
+      - "xxx:NonExistentModel"

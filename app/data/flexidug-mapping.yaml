@@ -1,0 +1,15 @@
+# Ontology Mapping Configuration
+namespaces:
+   sys: "http://osm.hpi.de/ontology/system#"
+
+# Icon mappings for ontology classes
+mappings:
+  "sys:Function": "/icons/function-square-svgrepo-com.svg"
+  "sys:Message": "/icons/letter-svgrepo-com.svg"
+  "sys:Actor": "/icons/person-svgrepo-com.svg"
+
+views:
+  all: 
+    name: "Alles"
+    include: 
+      - "*"

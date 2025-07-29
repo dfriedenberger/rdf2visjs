@@ -1,6 +1,0 @@
-http://frittenburger.de/ontology/mmut#RDFMicroModel /icons/rdf-model.svg
-http://frittenburger.de/ontology/mmut#BinaryMicroModel /icons/binary-code-binary-svgrepo-com.svg
-http://frittenburger.de/ontology/mmut#SysMLMicroModel /icons/sysml-svgrepo-com.svg
-http://frittenburger.de/ontology/mmut#PythonScriptTransformation /svg/transformation.svg?X={{label}}
-http://frittenburger.de/ontology/mmut#ContainerProperties /icons/docker-svgrepo-com.svg
-http://frittenburger.de/ontology/mmut#TaskDefinition /icons/process-svgrepo-com.svg

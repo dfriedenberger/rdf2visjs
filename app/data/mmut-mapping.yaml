@@ -1,0 +1,42 @@
+# MMUT Ontology Mapping Configuration
+namespaces:
+   mmut: "http://frittenburger.de/ontology/mmut#"
+
+# Icon mappings for MMUT ontology classes
+mappings:
+  "mmut:RDFMicroModel": "/icons/rdf-model.svg"
+  "mmut:BinaryMicroModel": "/icons/binary-code-binary-svgrepo-com.svg"
+  "mmut:SysMLMicroModel": "/icons/sysml-svgrepo-com.svg"
+  "mmut:PythonScriptTransformation": "/svg/transformation.svg?X={{label}}"
+  "mmut:ContainerProperties": "/icons/docker-svgrepo-com.svg"
+  "mmut:TaskDefinition": "/icons/process-svgrepo-com.svg"
+
+views:
+  all: 
+    name: "Alles"
+    include: 
+      - "*"
+  mmut: 
+    name: "MicroModels and Transformations"
+    include: 
+      - "mmut:RDFMicroModel"
+      - "mmut:BinaryMicroModel"
+      - "mmut:SysMLMicroModel"
+      - "mmut:PythonScriptTransformation"
+    exclude: 
+      - "*"
+  jobs:
+    name: "Jobs"
+    include: 
+      - "mmut:RDFMicroModel"
+      - "mmut:BinaryMicroModel"
+      - "mmut:SysMLMicroModel"
+      - "mmut:PythonScriptTransformation"
+      - "mmut:TaskDefinition"
+    exclude: 
+      - "*"
+  
+
+    
+  
+
